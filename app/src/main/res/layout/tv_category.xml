@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_category_title"
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:textSize="40px"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_category_num"
+        android:layout_width="300px"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10px"
+        android:gravity="start"
+        android:textSize="30px" />
+
+</LinearLayout>

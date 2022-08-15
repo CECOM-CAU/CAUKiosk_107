@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="1575px"
+        android:layout_height="match_parent">
+
+        <!-- 상단 호실 이름 텍스트뷰 -->
+        <LinearLayout
+            android:layout_width="1000px"
+            android:layout_height="248.5px"
+            android:layout_marginTop="63.6px"
+            android:layout_marginStart="60.6px"
+            android:orientation="vertical"
+            android:id="@+id/detail_layout_title">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:id="@+id/detail_text_title"
+                android:text="XXX 강의실"
+                android:textColor="@android:color/black"
+                android:textSize="50sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="490.6px"
+            android:layout_height="248.5px"
+            android:layout_marginTop="73.6px"
+            android:layout_marginStart="1054.8px"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/detail_layout_number">
+
+            <!-- 상단 호실 번호 텍스트뷰 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:id="@+id/detail_text_number"
+                android:textColor="@android:color/black"
+                android:textSize="100px"/>
+
+            <!-- 상단 호실 전화번호 텍스트뷰 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/detail_text_phone"
+                android:text="02-1234-5678"
+                android:textColor="@android:color/black"
+                android:textSize="50px"/>
+
+        </LinearLayout>
+
+        <!-- 호실 이미지뷰 -->
+        <LinearLayout
+            android:layout_width="975.8px"
+            android:layout_height="698.8px"
+            android:layout_marginTop="331.5px"
+            android:layout_marginStart="60.6px"
+            android:orientation="vertical"
+            android:id="@+id/detail_layout_image">
+            <ImageView
+                android:id="@+id/detail_imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"/>
+        </LinearLayout>
+
+        <!-- 호실 안내 텍스트뷰-->
+        <LinearLayout
+            android:layout_width="442.9px"
+            android:layout_height="366.7px"
+            android:layout_marginTop="333.3px"
+            android:layout_marginStart="1084.8px"
+            android:orientation="vertical"
+            android:id="@+id/detail_layout_info">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:id="@+id/detail_text_info"
+                android:text="asdfasdf"
+                android:textColor="@android:color/black"
+                android:textSize="50px"/>
+
+        </LinearLayout>
+
+        <!-- 도면 버튼 이미지뷰 -->
+        <Button
+            android:layout_width="442.9px"
+            android:layout_height="366.7px"
+            android:layout_marginTop="660px"
+            android:layout_marginStart="1084.8px"
+            android:background="@android:color/transparent"
+            android:id="@+id/detail_btn_return" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/detail_layout_map">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/detail_image_map" />
+
+            <View
+                android:layout_width="50px"
+                android:layout_height="20px"
+                android:layout_margin="5dp"
+                android:background="@android:color/holo_red_light"
+                android:id="@+id/detail_view_room"/>
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="345px"
+        android:layout_height="match_parent"
+        android:background="@color/mainPanelBG">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="165px"
+            android:src="@drawable/logo_main_info_all"
+            android:id="@+id/main_btn_facility" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3px"
+            android:layout_marginTop="165px"
+            android:background="@android:color/white" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="138px"
+            android:layout_marginTop="168px"
+            android:src="@drawable/logo_main_info_floor" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3px"
+            android:layout_marginTop="303px"
+            android:background="@android:color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="662.7px"
+            android:layout_marginTop="306px"
+            android:orientation="vertical">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="55px"
+                android:text="가동"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_main_floor_normal"
+                android:id="@+id/main_btn_ga_dong"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3px"
+                android:background="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="5F"
+                    android:textSize="55px"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/btn_main_floor_normal"
+                    android:id="@+id/main_btn_floor_5"/>
+                <View
+                    android:layout_width="3px"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white" />
+                <Button
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="6F"
+                    android:textSize="55px"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/btn_main_floor_normal"
+                    android:id="@+id/main_btn_floor_6"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3px"
+                android:background="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="3F"
+                    android:textSize="55px"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/btn_main_floor_normal"
+                    android:id="@+id/main_btn_floor_3"/>
+                <View
+                    android:layout_width="3px"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white" />
+                <Button
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="4F"
+                    android:textSize="55px"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/btn_main_floor_normal"
+                    android:id="@+id/main_btn_floor_4"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3px"
+                android:background="@android:color/white" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="1F"
+                    android:textSize="55px"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/btn_main_floor_normal"
+                    android:id="@+id/main_btn_floor_1"/>
+                <View
+                    android:layout_width="3px"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white" />
+                <Button
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="2F"
+                    android:textSize="55px"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/btn_main_floor_normal"
+                    android:id="@+id/main_btn_floor_2"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3px"
+                android:background="@android:color/white" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="나동"
+                android:textSize="55px"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_main_floor_normal"
+                android:id="@+id/main_btn_na_dong"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3px"
+                android:background="@android:color/white" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="1F"
+                    android:textSize="55px"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/btn_main_floor_normal"
+                    android:id="@+id/main_btn_floor_b1"/>
+                <View
+                    android:layout_width="3px"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white" />
+                <Button
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="2F"
+                    android:textSize="55px"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/btn_main_floor_normal"
+                    android:id="@+id/main_btn_floor_b2"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3px"
+            android:layout_marginTop="967.7px"
+            android:background="@android:color/white" />
+
+        <ImageView
+            android:layout_width="106px"
+            android:layout_height="102px"
+            android:layout_marginTop="983px"
+            android:background="@drawable/btn_main_home"
+            android:id="@+id/main_btn_home"/>
+        <ImageView
+            android:layout_width="241px"
+            android:layout_height="102px"
+            android:layout_marginTop="978px"
+            android:layout_marginLeft="104px"
+            android:background="@drawable/dongari_search"
+            android:id="@+id/main_btn_search"/>
+
+
+    </FrameLayout>
+
+</LinearLayout>
