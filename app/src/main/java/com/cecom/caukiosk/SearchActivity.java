@@ -70,7 +70,7 @@ public class SearchActivity extends BaseActivity {
                         int num = -1;
                         do {
                             input_string = input1.getText().toString().replaceAll(" ","").toLowerCase();
-                            String[] tempString = c.getString(c.getColumnIndex("search_keyword")).toLowerCase().replaceAll(" ","").split(",");
+                            String[] tempString = c.getString(c.getColumnIndex("name")).toLowerCase().replaceAll(" ","").split(",");
                             for(String temp : tempString){
                                 if(temp.equals(input_string.replaceAll(" ","").toLowerCase())){
                                     empty_count = 1;
