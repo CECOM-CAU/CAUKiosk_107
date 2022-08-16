@@ -119,6 +119,7 @@ public class SearchActivity extends BaseActivity {
                                         }
                                     });
                                     tv.setText(c.getString(c.getColumnIndex("name")));  // textView에 내용 추가
+                                    tv.setTextSize(25);
                                     LinearLayout.LayoutParams tempViewParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
                                     tempViewParams.setMargins(0,0,0,13);
                                     tv.setLayoutParams(tempViewParams);
