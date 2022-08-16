@@ -72,7 +72,7 @@ public class SearchActivity extends BaseActivity {
                             input_string = input1.getText().toString().replaceAll(" ","").toLowerCase();
                             String[] tempString = c.getString(c.getColumnIndex("name")).toLowerCase().replaceAll(" ","").split(",");
                             for(String temp : tempString){
-                                if(temp.equals(input_string.replaceAll(" ","").toLowerCase())){
+                                if(temp.contains(input_string.replaceAll(" ","").toLowerCase())){
                                     empty_count = 1;
                                     num++;
                                     tv = new TextView(activity);  // 새로 추가할 textView 생성
