@@ -44,51 +44,57 @@
             android:textSize="110px"
             android:visibility="gone"
             android:id="@+id/no_search_view"/>
-        <LinearLayout
+        <ScrollView
+            android:layout_marginTop="250px"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
             <LinearLayout
-                android:layout_width="200px"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="top"
-                android:layout_marginTop="220px"
-                android:layout_marginLeft="200px"
-                android:layout_marginBottom="100px"
-                android:id="@+id/search_view_1">
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="200px"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="top"
+                    android:layout_marginTop="220px"
+                    android:layout_marginLeft="200px"
+                    android:layout_marginBottom="100px"
+                    android:id="@+id/search_view_1">
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="200px"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="top"
+                    android:layout_marginTop="220px"
+                    android:layout_marginLeft="110px"
+                    android:layout_marginBottom="100px"
+                    android:id="@+id/search_view_2">
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="200px"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="top"
+                    android:layout_marginTop="220px"
+                    android:layout_marginLeft="110px"
+                    android:layout_marginBottom="100px"
+                    android:id="@+id/search_view_3">
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="200px"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="top"
+                    android:layout_marginTop="220px"
+                    android:layout_marginLeft="110px"
+                    android:layout_marginBottom="100px"
+                    android:id="@+id/search_view_4">
+                </LinearLayout>
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="200px"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="top"
-                android:layout_marginTop="220px"
-                android:layout_marginLeft="110px"
-                android:layout_marginBottom="100px"
-                android:id="@+id/search_view_2">
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="200px"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="top"
-                android:layout_marginTop="220px"
-                android:layout_marginLeft="110px"
-                android:layout_marginBottom="100px"
-                android:id="@+id/search_view_3">
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="200px"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="top"
-                android:layout_marginTop="220px"
-                android:layout_marginLeft="110px"
-                android:layout_marginBottom="100px"
-                android:id="@+id/search_view_4">
-            </LinearLayout>
-        </LinearLayout>
+        </ScrollView>
+
 
 
     </FrameLayout>
