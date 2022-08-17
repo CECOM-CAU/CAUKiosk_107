@@ -209,22 +209,10 @@
             android:layout_marginTop="165px"
             android:background="@android:color/white" />
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="138px"
-            android:layout_marginTop="168px"
-            android:src="@drawable/logo_main_info_floor" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="3px"
-            android:layout_marginTop="303px"
-            android:background="@android:color/white" />
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="662.7px"
-            android:layout_marginTop="306px"
+            android:layout_height="790.7px"
+            android:layout_marginTop="168px"
             android:orientation="vertical">
             <Button
                 android:layout_width="match_parent"
@@ -234,7 +222,7 @@
                 android:textSize="55px"
                 android:text="가동"
                 android:textColor="@android:color/white"
-                android:background="@drawable/btn_main_floor_pressed"
+                android:background="@drawable/btn_main_floor_normal"
                 android:id="@+id/main_btn_ga_dong"/>
 
             <View
@@ -303,7 +291,7 @@
                     android:text="4F"
                     android:textSize="55px"
                     android:textColor="@android:color/white"
-                    android:background="@drawable/btn_main_floor_pressed"
+                    android:background="@drawable/btn_main_floor_normal"
                     android:id="@+id/main_btn_floor_4"/>
             </LinearLayout>
 
@@ -391,6 +379,15 @@
                     android:id="@+id/main_btn_floor_b2"/>
             </LinearLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3px"
+                android:background="@android:color/white" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="138px"
+                android:src="@drawable/logo_main_info_etc" />
 
         </LinearLayout>
 
@@ -414,7 +411,6 @@
             android:layout_marginLeft="104px"
             android:background="@drawable/dongari_search"
             android:id="@+id/main_btn_search"/>
-
 
 
     </FrameLayout>

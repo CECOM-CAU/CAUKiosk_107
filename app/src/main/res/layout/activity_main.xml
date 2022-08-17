@@ -80,7 +80,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="803.7px"
+            android:layout_height="790.7px"
             android:layout_marginTop="168px"
             android:orientation="vertical">
             <Button
@@ -256,7 +256,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="138px"
-                android:src="@drawable/logo_main_info_floor" />
+                android:src="@drawable/logo_main_info_etc" />
 
         </LinearLayout>
 

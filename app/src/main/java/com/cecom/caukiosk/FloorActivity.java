@@ -21,6 +21,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
+
 import com.cecom.caukiosk.buttons.*;
 
 import java.io.File;
@@ -314,6 +316,7 @@ public class FloorActivity extends BaseActivity {
 
             }
         }
+        updateFloorButton(floor);
         sampleDB.close();
     }
 
@@ -340,6 +343,64 @@ public class FloorActivity extends BaseActivity {
             tempButton.setBackgroundColor(Color.parseColor("#00ff0000"));
 
         }
+    }
+
+    void updateFloorButton(String floor){
+        Button btnFloor = findViewById(R.id.main_btn_floor_1);
+        Button btnFloorDong = findViewById(R.id.main_btn_ga_dong);
+        if(floor.toLowerCase().startsWith("b")){
+            switch(floor.substring(1, 2)){
+                case "1":
+                    Log.d("input_b","b");
+                    if(floor.substring(1, 2).equals("1")){
+                        Log.d("input_b1","b1");
+                        btnFloor = findViewById(R.id.main_btn_floor_b1);
+                        btnFloorDong = findViewById(R.id.main_btn_na_dong);
+                    }
+                    break;
+                case "2":
+                    Log.d("input_b","b");
+                    if(floor.substring(1, 2).equals("2")){
+                        Log.d("input_b2","b2");
+                        btnFloor = findViewById(R.id.main_btn_floor_b2);
+                        btnFloorDong = findViewById(R.id.main_btn_na_dong);
+                    }
+                    break;
+            }
+        }
+        else{
+            Log.d("floor_number",floor);
+            switch(floor.substring(0, 1).toLowerCase()) {
+                case "1":
+                    btnFloor = findViewById(R.id.main_btn_floor_1);
+                    btnFloorDong = findViewById(R.id.main_btn_ga_dong);
+                    break;
+                case "2":
+                    btnFloor = findViewById(R.id.main_btn_floor_2);
+                    btnFloorDong = findViewById(R.id.main_btn_ga_dong);
+                    break;
+                case "3":
+                    btnFloor = findViewById(R.id.main_btn_floor_3);
+                    btnFloorDong = findViewById(R.id.main_btn_ga_dong);
+                    break;
+                case "4":
+                    btnFloor = findViewById(R.id.main_btn_floor_4);
+                    btnFloorDong = findViewById(R.id.main_btn_ga_dong);
+                    break;
+                case "5":
+                    btnFloor = findViewById(R.id.main_btn_floor_5);
+                    btnFloorDong = findViewById(R.id.main_btn_ga_dong);
+                    break;
+                case "6":
+                    btnFloor = findViewById(R.id.main_btn_floor_6);
+                    btnFloorDong = findViewById(R.id.main_btn_ga_dong);
+                    break;
+            }
+
+        }
+
+        btnFloor.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_main_floor_pressed));
+        btnFloorDong.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_main_floor_pressed));
     }
 
     @Override
