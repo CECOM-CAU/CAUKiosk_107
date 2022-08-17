@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Environment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -48,10 +50,14 @@ public class SearchActivity extends BaseActivity {
         final LinearLayout F4Layout = findViewById(R.id.search_view_4);
 
 
-        searchButton.setOnClickListener(new View.OnClickListener() {
-            TextView tv;
+        input1.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onClick(View v) {
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
                 InputMethodManager manager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
                 manager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                 no_search_view.setVisibility(View.GONE);
@@ -75,7 +81,7 @@ public class SearchActivity extends BaseActivity {
                                 if(temp.contains(input_string.replaceAll(" ","").toLowerCase())){
                                     empty_count = 1;
                                     num++;
-                                    tv = new TextView(activity);  // 새로 추가할 textView 생성
+                                    TextView tv = new TextView(activity);  // 새로 추가할 textView 생성
                                     final String tempC = c.getString(0);
                                     tv.setOnClickListener(new View.OnClickListener() {
                                         @Override
@@ -154,6 +160,11 @@ public class SearchActivity extends BaseActivity {
                     no_search_view.setVisibility(View.VISIBLE);
                 }
                 sampleDB.close();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
 
