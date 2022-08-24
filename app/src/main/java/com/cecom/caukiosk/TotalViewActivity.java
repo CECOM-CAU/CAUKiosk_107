@@ -44,7 +44,7 @@ public class TotalViewActivity extends BaseActivity {
         F4Layout.setOnClickListener(floorListener);
         F5Layout.setOnClickListener(floorListener);
         F6Layout.setOnClickListener(floorListener);
-        
+
         if (c != null) {
             if (c.moveToFirst()) {
                 do {
@@ -53,6 +53,7 @@ public class TotalViewActivity extends BaseActivity {
                     LinearLayout.LayoutParams tempViewParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
                     tempViewParams.setMargins(0,0,0,13);
                     tv.setLayoutParams(tempViewParams);
+                    tv.setTextSize(25);
 
                     //tv.setLayoutParams(textParams);  // textView layout 설정
                     tv.setGravity(Gravity.CENTER);  // textView layout 설정
