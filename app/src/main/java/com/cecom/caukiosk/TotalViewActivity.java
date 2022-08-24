@@ -44,13 +44,11 @@ public class TotalViewActivity extends BaseActivity {
         F4Layout.setOnClickListener(floorListener);
         F5Layout.setOnClickListener(floorListener);
         F6Layout.setOnClickListener(floorListener);
-
-
-        TextView tv;
+        
         if (c != null) {
             if (c.moveToFirst()) {
                 do {
-                    tv = new TextView(this);  // 새로 추가할 textView 생성
+                    TextView tv = new TextView(this);  // 새로 추가할 textView 생성
                     tv.setText(c.getString(c.getColumnIndex("name")));  // textView에 내용 추가
                     LinearLayout.LayoutParams tempViewParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
                     tempViewParams.setMargins(0,0,0,13);
