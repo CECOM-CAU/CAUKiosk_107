@@ -301,46 +301,6 @@ public class DetailActivity extends BaseActivity{
             startTop += 0.4;
         }
 
-        /*mapLayout.animate()
-                .scaleX((float) (510.0/ getIntent().getIntExtra("width", 0)))
-                .scaleY((float) (150.0/ getIntent().getIntExtra("height", 0)));
-*/
-
-        /*
-        for(int i = 0; i < 10; i++){
-            mapLayout.animate()
-                    .scaleX((float) (50*i/ getIntent().getIntExtra("width", 0)))
-                    .scaleY((float) (20*i/ getIntent().getIntExtra("height", 0)));
-            Handler mHandler = new Handler();
-            mHandler.postDelayed(new Runnable()  {
-                public void run() {
-                    // 시간 지난 후 실행할 코딩
-                }
-            }, 1000); // 0.5초후
-        }
-
-        int startLeft = getIntent().getIntExtra("marginLeft",0);
-        int startTop = getIntent().getIntExtra("marginTop", 0);
-        for(int i = 0; i < 20; i++){
-
-
-            TranslateAnimation translateAnimation = new TranslateAnimation(
-                    startLeft, startLeft+8,
-                    startTop, startTop+5);
-            startLeft += 8;
-            startTop += 5;
-            translateAnimation.setDuration(1000);
-            Handler mHandler = new Handler();
-            mHandler.postDelayed(new Runnable()  {
-                public void run() {
-                    // 시간 지난 후 실행할 코딩
-                }
-            }, 1000); // 0.5초후
-            translateAnimation.setFillAfter(true);
-            mapLayout.startAnimation(translateAnimation);
-        }
-*/
-
         roomLayoutParams.setMargins(getIntent().getIntExtra("btnMarginLeft", 0)-147, getIntent().getIntExtra("btnMarginTop", 0)- 277, 0, 0);
         roomLayoutParams.width = getIntent().getIntExtra("btnWidth", 0);
         roomLayoutParams.height = getIntent().getIntExtra("btnHeight", 0);
@@ -389,68 +349,7 @@ public class DetailActivity extends BaseActivity{
     void runMapAnimation3F(){
         mapLayout.setScaleX((float) (510.0/ getIntent().getIntExtra("width", 0)));
         mapLayout.setScaleY((float) (150.0/ getIntent().getIntExtra("height", 0)));
-        Handler mHandler = new Handler();
-
-        float startLeft = mapLayout.getLeft();
-        float startTop = mapLayout.getTop();
-        for(int i = 0; i < 500; i++){
-            final float tempSL = startLeft;
-            final float tempST = startTop;
-
-            mHandler.postDelayed(new Runnable()  {
-                public void run() {
-                    TranslateAnimation translateAnimation = new TranslateAnimation(
-                            tempSL, tempSL,
-                            tempST, tempST);
-
-                    translateAnimation.setDuration(10);
-                    translateAnimation.setFillAfter(true);
-                    mapLayout.startAnimation(translateAnimation);
-                }
-            }, (int)(100+0.8*(i+1))); // 0.5초후
-            startLeft += 0.55;
-            startTop += 0.5;
-        }
-
-        /*mapLayout.animate()
-                .scaleX((float) (510.0/ getIntent().getIntExtra("width", 0)))
-                .scaleY((float) (150.0/ getIntent().getIntExtra("height", 0)));
-*/
-
-        /*
-        for(int i = 0; i < 10; i++){
-            mapLayout.animate()
-                    .scaleX((float) (50*i/ getIntent().getIntExtra("width", 0)))
-                    .scaleY((float) (20*i/ getIntent().getIntExtra("height", 0)));
-            Handler mHandler = new Handler();
-            mHandler.postDelayed(new Runnable()  {
-                public void run() {
-                    // 시간 지난 후 실행할 코딩
-                }
-            }, 1000); // 0.5초후
-        }
-
-        int startLeft = getIntent().getIntExtra("marginLeft",0);
-        int startTop = getIntent().getIntExtra("marginTop", 0);
-        for(int i = 0; i < 20; i++){
-
-
-            TranslateAnimation translateAnimation = new TranslateAnimation(
-                    startLeft, startLeft+8,
-                    startTop, startTop+5);
-            startLeft += 8;
-            startTop += 5;
-            translateAnimation.setDuration(1000);
-            Handler mHandler = new Handler();
-            mHandler.postDelayed(new Runnable()  {
-                public void run() {
-                    // 시간 지난 후 실행할 코딩
-                }
-            }, 1000); // 0.5초후
-            translateAnimation.setFillAfter(true);
-            mapLayout.startAnimation(translateAnimation);
-        }
-*/
+        mapLayoutParams.setMargins(700, 800, 0, 0);
 
         roomLayoutParams.setMargins(getIntent().getIntExtra("btnMarginLeft", 0)-215, getIntent().getIntExtra("btnMarginTop", 0)- 277, 0, 0);
         roomLayoutParams.width = getIntent().getIntExtra("btnWidth", 0);
