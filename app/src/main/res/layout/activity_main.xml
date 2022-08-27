@@ -264,14 +264,12 @@
                 android:background="@drawable/btn_main_floor_normal"
                 android:id="@+id/main_btn_etc"/>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3px"
+                android:background="@android:color/white" />
+
         </LinearLayout>
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="3px"
-            android:layout_marginTop="967.7px"
-            android:background="@android:color/white" />
 
         <ImageView
             android:layout_width="106px"
