@@ -262,7 +262,7 @@
                 android:textSize="55px"
                 android:textColor="@android:color/white"
                 android:background="@drawable/btn_main_floor_normal"
-                android:id="@+id/main_btn_etc"/>
+                android:id="@+id/main_btn_etc_dong"/>
 
             <View
                 android:layout_width="match_parent"
