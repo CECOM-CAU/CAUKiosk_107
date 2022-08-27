@@ -9,31 +9,11 @@
         android:layout_width="1575px"
         android:layout_height="match_parent">
 
-        <!-- 상단 호실 이름 텍스트뷰 -->
-        <LinearLayout
-            android:layout_width="1000px"
-            android:layout_height="248.5px"
-            android:layout_marginTop="63.6px"
-            android:layout_marginStart="60.6px"
-            android:orientation="vertical"
-            android:id="@+id/detail_layout_title">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:id="@+id/detail_text_title"
-                android:text="XXX 강의실"
-                android:textColor="@android:color/black"
-                android:textSize="50sp" />
-
-        </LinearLayout>
-
         <LinearLayout
             android:layout_width="490.6px"
             android:layout_height="248.5px"
             android:layout_marginTop="73.6px"
-            android:layout_marginStart="1054.8px"
+            android:layout_marginStart="60.6px"
             android:gravity="center"
             android:orientation="vertical"
             android:id="@+id/detail_layout_number">
@@ -57,6 +37,26 @@
                 android:text="02-1234-5678"
                 android:textColor="@android:color/black"
                 android:textSize="50px"/>
+
+        </LinearLayout>
+
+        <!-- 상단 호실 이름 텍스트뷰 -->
+        <LinearLayout
+            android:layout_width="1000px"
+            android:layout_height="248.5px"
+            android:layout_marginTop="63.6px"
+            android:layout_marginStart="550.6px"
+            android:orientation="vertical"
+            android:id="@+id/detail_layout_title">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:id="@+id/detail_text_title"
+                android:text="XXX 강의실"
+                android:textColor="@android:color/black"
+                android:textSize="50sp" />
 
         </LinearLayout>
 
