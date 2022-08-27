@@ -318,19 +318,23 @@
                 android:layout_height="3px"
                 android:background="@android:color/white" />
 
-            <ImageView
+            <Button
                 android:layout_width="match_parent"
-                android:layout_height="138px"
-                android:src="@drawable/logo_main_info_etc" />
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="학생회관 외"
+                android:textSize="55px"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_main_floor_normal"
+                android:id="@+id/main_btn_etc_dong"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3px"
+                android:background="@android:color/white" />
 
         </LinearLayout>
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="3px"
-            android:layout_marginTop="967.7px"
-            android:background="@android:color/white" />
 
         <ImageView
             android:layout_width="106px"
