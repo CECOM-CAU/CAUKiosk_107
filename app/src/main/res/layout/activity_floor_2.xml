@@ -346,13 +346,13 @@
         <ImageView
             android:layout_width="106px"
             android:layout_height="102px"
-            android:layout_marginTop="983px"
+            android:layout_marginTop="970px"
             android:background="@drawable/btn_main_home"
             android:id="@+id/main_btn_home"/>
         <ImageView
             android:layout_width="241px"
             android:layout_height="102px"
-            android:layout_marginTop="978px"
+            android:layout_marginTop="970px"
             android:layout_marginLeft="104px"
             android:background="@drawable/dongari_search"
             android:id="@+id/main_btn_search"/>
