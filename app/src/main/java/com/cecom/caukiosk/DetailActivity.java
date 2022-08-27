@@ -393,15 +393,9 @@ public class DetailActivity extends BaseActivity{
     }
 
     void runMapAnimation3F(){
-       Handler mHandler = new Handler();
-        mHandler.postDelayed(new Runnable()  {
-            public void run() {
-                mapLayout.animate()
-                        .scaleX((float) (510.0/ getIntent().getIntExtra("width", 0)))
-                        .scaleY((float) (150.0/ getIntent().getIntExtra("height", 0)))
-                        .setDuration(400);
-            }
-        }, 80); // 0.5초후
+        mapLayout.setScaleX((float) (510.0/ getIntent().getIntExtra("width", 0)));
+        mapLayout.setScaleY((float) (150.0/ getIntent().getIntExtra("height", 0)));
+        Handler mHandler = new Handler();
 
         float startLeft = mapLayout.getLeft();
         float startTop = mapLayout.getTop();
