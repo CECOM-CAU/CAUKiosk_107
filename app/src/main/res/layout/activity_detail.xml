@@ -9,11 +9,31 @@
         android:layout_width="1575px"
         android:layout_height="match_parent">
 
+        <!-- 상단 호실 이름 텍스트뷰 -->
+        <LinearLayout
+            android:layout_width="1000px"
+            android:layout_height="248.5px"
+            android:layout_marginTop="63.6px"
+            android:layout_marginStart="60.6px"
+            android:orientation="vertical"
+            android:id="@+id/detail_layout_title">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:id="@+id/detail_text_title"
+                android:text="대충 제목 이렇게 긴 동아리는 없겠지"
+                android:textColor="@android:color/black"
+                android:textSize="50sp" />
+
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="490.6px"
             android:layout_height="248.5px"
             android:layout_marginTop="73.6px"
-            android:layout_marginStart="60.6px"
+            android:layout_marginStart="1054.8px"
             android:gravity="center"
             android:orientation="vertical"
             android:id="@+id/detail_layout_number">
@@ -26,7 +46,7 @@
                 android:id="@+id/detail_text_number"
                 android:text="XXX호"
                 android:textColor="@android:color/black"
-                android:textSize="100px"/>
+                android:textSize="40sp"/>
 
             <!-- 상단 호실 전화번호 텍스트뷰 -->
             <TextView
@@ -37,26 +57,6 @@
                 android:text="02-1234-5678"
                 android:textColor="@android:color/black"
                 android:textSize="50px"/>
-
-        </LinearLayout>
-
-        <!-- 상단 호실 이름 텍스트뷰 -->
-        <LinearLayout
-            android:layout_width="1000px"
-            android:layout_height="248.5px"
-            android:layout_marginTop="63.6px"
-            android:layout_marginStart="550.6px"
-            android:orientation="vertical"
-            android:id="@+id/detail_layout_title">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:id="@+id/detail_text_title"
-                android:text="대충 제목 이렇게 긴 동아리는 없겠지"
-                android:textColor="@android:color/black"
-                android:textSize="50sp" />
 
         </LinearLayout>
 
@@ -78,7 +78,7 @@
         <!-- 호실 안내 텍스트뷰-->
         <LinearLayout
             android:layout_width="442.9px"
-            android:layout_height="366.7px"
+            android:layout_height="460px"
             android:layout_marginTop="333.3px"
             android:layout_marginStart="1084.8px"
             android:orientation="vertical"
@@ -89,7 +89,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:id="@+id/detail_text_info"
-                android:text="집가고싶다 대충 동아리 설명 집가고싶다 집가고싶다 집가고싶다 집갈수있을까 집가고싶다 집가고싶다 집가고싶다 집가고싶다"
+                android:text="대충 동아리 설명 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다"
                 android:textColor="@android:color/black"
                 android:textSize="50px"/>
 
@@ -98,8 +98,8 @@
         <!-- 도면 버튼 이미지뷰 -->
         <Button
             android:layout_width="442.9px"
-            android:layout_height="366.7px"
-            android:layout_marginTop="660px"
+            android:layout_height="180.7px"
+            android:layout_marginTop="846px"
             android:layout_marginStart="1084.8px"
             android:background="@android:color/transparent"
             android:id="@+id/detail_btn_return" />
