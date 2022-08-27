@@ -294,7 +294,6 @@ public class DetailActivity extends BaseActivity{
         mapLayoutParams.setMargins(1150, 820, 0, 0);
 
         roomLayoutParams.setMargins(getIntent().getIntExtra("btnMarginLeft", 0)-633, getIntent().getIntExtra("btnMarginTop", 0)- 290, 0, 0);
-        Log.d("where",String.valueOf(getIntent().getIntExtra("btnMarginLeft", 0)));
         roomLayoutParams.width = getIntent().getIntExtra("btnWidth", 0);
         roomLayoutParams.height = getIntent().getIntExtra("btnHeight", 0);
         roomView.setLayoutParams(roomLayoutParams);
