@@ -54,7 +54,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:id="@+id/detail_text_title"
-                android:text="XXX 강의실"
+                android:text="대충 제목 이렇게 긴 동아리는 없겠지"
                 android:textColor="@android:color/black"
                 android:textSize="50sp" />
 
