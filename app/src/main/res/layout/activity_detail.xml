@@ -23,7 +23,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:id="@+id/detail_text_title"
-                android:text="대충 제목 이렇게 긴 동아리는 없겠지"
+                android:text="대충 제목이 이렇게까지 긴 동아리는 없겠지 ㄹㅇㅋㅋ"
                 android:textColor="@android:color/black"
                 android:textSize="50sp" />
 
@@ -89,7 +89,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:id="@+id/detail_text_info"
-                android:text="대충 동아리 설명 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다"
+                android:text="대충 동아리 설명 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 집가고싶다 85글자"
                 android:textColor="@android:color/black"
                 android:textSize="50px"/>
 
