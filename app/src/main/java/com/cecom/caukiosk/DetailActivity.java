@@ -278,28 +278,7 @@ public class DetailActivity extends BaseActivity{
     void runMapAnimationDefault(){
         mapLayout.setScaleX((float) (500.0/ getIntent().getIntExtra("width", 0)));
         mapLayout.setScaleY((float) (150.0/ getIntent().getIntExtra("height", 0)));
-        Handler mHandler = new Handler();
-
-        float startLeft = mapLayout.getLeft();
-        float startTop = mapLayout.getTop();
-        for(int i = 0; i < 500; i++){
-            final float tempSL = startLeft;
-            final float tempST = startTop;
-
-            mHandler.postDelayed(new Runnable()  {
-                public void run() {
-                    TranslateAnimation translateAnimation = new TranslateAnimation(
-                            tempSL, tempSL,
-                            tempST, tempST);
-
-                    translateAnimation.setDuration(10);
-                    translateAnimation.setFillAfter(true);
-                    mapLayout.startAnimation(translateAnimation);
-                }
-            }, (int)(100+0.8*(i+1))); // 0.5초후
-            startLeft += 0.75;
-            startTop += 0.4;
-        }
+        mapLayoutParams.setMargins(670, 780, 0, 0);
 
         roomLayoutParams.setMargins(getIntent().getIntExtra("btnMarginLeft", 0)-147, getIntent().getIntExtra("btnMarginTop", 0)- 277, 0, 0);
         roomLayoutParams.width = getIntent().getIntExtra("btnWidth", 0);
