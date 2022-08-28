@@ -22,7 +22,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:id="@+id/detail_text_title"
-                android:text="대충 제목이 이렇게까지 긴 동아리는 없겠지 ㄹㅇㅋㅋ"
+                android:text="제목이 이렇게까지 긴 동아리는 없겠지 ㄹㅇㅋㅋ"
                 android:textColor="@android:color/black"
                 android:textSize="50sp" />
         </LinearLayout>
