@@ -23,14 +23,11 @@ public class TotalViewActivity extends BaseActivity {
         initialView();
 
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator, "building_107.db");
-        CategoryArrayList<Category> cateList = new CategoryArrayList<>();
         SQLiteDatabase sampleDB =  SQLiteDatabase.openOrCreateDatabase(file,  null);
         Cursor c = sampleDB.rawQuery("SELECT * FROM total_desc",null);
-        String cate = "";
 
         LinearLayout FB1Layout = findViewById(R.id.total_view_B1);
         LinearLayout FB2Layout = findViewById(R.id.total_view_B2);
-
         LinearLayout F1Layout = findViewById(R.id.total_view_1);
         LinearLayout F2Layout = findViewById(R.id.total_view_2);
         LinearLayout F3Layout = findViewById(R.id.total_view_3);
