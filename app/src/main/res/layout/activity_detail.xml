@@ -63,10 +63,10 @@
 
         <!-- 도면 버튼 이미지뷰 -->
         <Button
-            android:layout_width="442.9px"
-            android:layout_height="180.7px"
-            android:layout_marginTop="846px"
-            android:layout_marginStart="1084.8px"
+            android:layout_width="490px"
+            android:layout_height="180px"
+            android:layout_marginTop="140px"
+            android:layout_marginStart="900px"
             android:background="@android:color/transparent"
             android:id="@+id/detail_btn_return" />
 
