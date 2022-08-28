@@ -12,7 +12,7 @@
         <!-- 상단 호실 이름 텍스트뷰 -->
         <LinearLayout
             android:layout_width="800px"
-            android:layout_height="178.5px"
+            android:layout_height="180px"
             android:layout_marginTop="120px"
             android:layout_marginStart="170px"
             android:orientation="vertical"
