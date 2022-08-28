@@ -51,7 +51,7 @@
             android:layout_width="1232px"
             android:layout_height="693px"
             android:layout_marginTop="331.5px"
-            android:layout_marginStart="60.6px"
+            android:layout_marginStart="171.5px"
             android:orientation="vertical"
             android:id="@+id/detail_layout_image">
             <ImageView
