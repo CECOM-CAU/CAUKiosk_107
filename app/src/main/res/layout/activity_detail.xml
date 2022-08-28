@@ -14,7 +14,7 @@
             android:layout_width="800px"
             android:layout_height="248.5px"
             android:layout_marginTop="63.6px"
-            android:layout_marginStart="60.6px"
+            android:layout_marginStart="170px"
             android:orientation="vertical"
             android:id="@+id/detail_layout_title">
             <TextView
