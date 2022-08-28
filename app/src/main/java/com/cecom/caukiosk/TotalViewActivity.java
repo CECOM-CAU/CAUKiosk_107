@@ -38,6 +38,8 @@ public class TotalViewActivity extends BaseActivity {
         LinearLayout F5Layout = findViewById(R.id.total_view_5);
         LinearLayout F6Layout = findViewById(R.id.total_view_6);
 
+        FB1Layout.setOnClickListener(floorListener);
+        FB2Layout.setOnClickListener(floorListener);
         F1Layout.setOnClickListener(floorListener);
         F2Layout.setOnClickListener(floorListener);
         F3Layout.setOnClickListener(floorListener);
