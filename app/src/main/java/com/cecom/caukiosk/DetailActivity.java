@@ -13,8 +13,6 @@ import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -22,25 +20,25 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
 
 import java.io.File;
 
 public class DetailActivity extends BaseActivity{
     String selRoom = "";
 
-    TextView tvNum ;
-    TextView tvTitle ;
-    ImageView imgViewDetail;
-
+    FrameLayout mapLayout;
     FrameLayout.LayoutParams mapLayoutParams;
     FrameLayout.LayoutParams roomLayoutParams;
     ImageView mapImage;
-    Intent intent;
+
     LinearLayout imageLayout;
-    FrameLayout mapLayout;
     LinearLayout numLayout;
     LinearLayout titleLayout;
+    ImageView imgViewDetail;
+    TextView tvNum;
+    TextView tvTitle;
+
+    Intent intent;
     View roomView;
 
     @Override
@@ -73,38 +71,31 @@ public class DetailActivity extends BaseActivity{
         mapLayout.setLayoutParams(mapLayoutParams);
 
         selRoom = getIntent().getStringExtra("NUM");
-        Log.d("selRoom",selRoom);
         File imgFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "club_image" + File.separator, selRoom+ ".png");
         if(imgFile.exists()){
             Bitmap bm = BitmapFactory.decodeFile(imgFile.getPath());
             imgViewDetail.setImageBitmap(bm);
         }
 
-
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator, "building_107.db");
         SQLiteDatabase sampleDB =  SQLiteDatabase.openOrCreateDatabase(file,  null);
         Cursor c = sampleDB.rawQuery("SELECT * FROM total_desc",null);
-        if (c != null) {
-            if (c.moveToFirst()) {
-                do {
-                    Log.d("roomd_id",c.getString(c.getColumnIndex("id")).toLowerCase());
-                    if(c.getString(c.getColumnIndex("id")).toLowerCase().equals(selRoom.toLowerCase())){
-                        //File imgFile = new  File(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "img_file" +File.separator, c.getString(c.getColumnIndex("img_url")));
-                        //if(imgFile.exists()){
-                        //    Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
-                        //    imgViewDetail.setImageBitmap(myBitmap);
-                        //}
-                       if(c.getString(c.getColumnIndex("id")).toLowerCase().startsWith("b")){
-                           String temp = "나동"+c.getString(c.getColumnIndex("id")).substring(1);
-                           tvNum.setText(temp);
-                       }
-                       else{
-                           tvNum.setText(c.getString(c.getColumnIndex("id")));
-                       }
-                       tvTitle.setText(c.getString(c.getColumnIndex("name")));
+        if(c != null){
+            if(c.moveToFirst()){
+                while(c.moveToNext()){
+                    if (c.getString(c.getColumnIndex("id")).equalsIgnoreCase(selRoom)) {
+                        if (c.getString(c.getColumnIndex("id")).toLowerCase().startsWith("b")) {
+                            String temp = "나동" + c.getString(c.getColumnIndex("id")).substring(1);
+                            tvNum.setText(temp);
+                        } else {
+                            tvNum.setText(c.getString(c.getColumnIndex("id")));
+                        }
+                        tvTitle.setText(c.getString(c.getColumnIndex("name")));
                     }
-                } while (c.moveToNext());
+                }
             }
+
+            c.close();
         }
 
         sampleDB.close();
@@ -130,8 +121,7 @@ public class DetailActivity extends BaseActivity{
         if(room.toLowerCase().startsWith("b")){
             switch(room.substring(1, 2)){
                 case "1":
-                    Log.d("input_b","b");
-                    if(room.substring(1, 2).equals("1")){
+                    if(room.charAt(1) == '1'){
                         Log.d("input_b1","b1");
                         btnFloor = findViewById(R.id.main_btn_floor_b1);
                         btnFloorDong = findViewById(R.id.main_btn_na_dong);
@@ -142,8 +132,7 @@ public class DetailActivity extends BaseActivity{
                     }
                     break;
                 case "2":
-                    Log.d("input_b","b");
-                    if(room.substring(1, 2).equals("2")){
+                    if(room.charAt(1) == '2'){
                         Log.d("input_b2","b2");
                         btnFloor = findViewById(R.id.main_btn_floor_b2);
                         btnFloorDong = findViewById(R.id.main_btn_na_dong);
@@ -154,9 +143,7 @@ public class DetailActivity extends BaseActivity{
                     }
                     break;
             }
-        }
-        else{
-            Log.d("room_number",room);
+        }else{
             if(room.length() == 3 || room.length() == 5 || room.length() == 4|| room.length() == 6){
                 switch(room.substring(0, 1).toLowerCase()) {
                     case "1":
@@ -229,10 +216,6 @@ public class DetailActivity extends BaseActivity{
         });
     }
 
-
-
-
-
     void runMapAnimationDefault(){
         mapLayout.setScaleX((float) (500.0/ getIntent().getIntExtra("width", 0)));
         mapLayout.setScaleY((float) (150.0/ getIntent().getIntExtra("height", 0)));
@@ -279,7 +262,7 @@ public class DetailActivity extends BaseActivity{
     @Override
     protected void onPause() {
         super.onPause();
-        if(KioskModeApp.isInLockMode == true){
+        if(KioskModeApp.isInLockMode){
             ActivityManager activityManager = (ActivityManager) getApplicationContext()
                     .getSystemService(Context.ACTIVITY_SERVICE);
             activityManager.moveTaskToFront(getTaskId(), 0);
