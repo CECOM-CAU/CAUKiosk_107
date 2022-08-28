@@ -22,6 +22,10 @@ public class TotalViewActivity extends BaseActivity {
         setContentView(R.layout.activity_total_view);
         initialView();
 
+        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator, "building_107.db");
+        SQLiteDatabase sampleDB =  SQLiteDatabase.openOrCreateDatabase(file,  null);
+        Cursor c = sampleDB.rawQuery("SELECT * FROM total_desc",null);
+
         LinearLayout FB1Layout = findViewById(R.id.total_view_B1);
         LinearLayout FB2Layout = findViewById(R.id.total_view_B2);
         LinearLayout F1Layout = findViewById(R.id.total_view_1);
@@ -40,32 +44,20 @@ public class TotalViewActivity extends BaseActivity {
         F5Layout.setOnClickListener(floorListener);
         F6Layout.setOnClickListener(floorListener);
 
-        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator, "building_107.db");
-        SQLiteDatabase sampleDB =  SQLiteDatabase.openOrCreateDatabase(file,  null);
-        Cursor c = sampleDB.rawQuery("SELECT * FROM total_desc",null);
-
-        if(c != null){
-            if(c.moveToFirst()){
-                while(c.moveToNext()){
-                    LinearLayout.LayoutParams tvParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-                    tvParam.setMargins(0, 0, 0, 13);
-
-                    TextView tv = new TextView(this);
-                    tv.setText(c.getString(c.getColumnIndex("name")));
-                    tv.setLayoutParams(tvParam);
+        if (c != null) {
+            if (c.moveToFirst()) {
+                do {
+                    TextView tv = new TextView(this);  // 새로 추가할 textView 생성
+                    tv.setText(c.getString(c.getColumnIndex("name")));  // textView에 내용 추가
+                    LinearLayout.LayoutParams tempViewParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                    tempViewParams.setMargins(0,0,0,13);
+                    tv.setLayoutParams(tempViewParams);
                     tv.setTextSize(25);
-                    tv.setGravity(Gravity.CENTER);
 
-                    String curFloor = c.getString(c.getColumnIndex("floor"));
-                    if(curFloor.startsWith("B")) {
-                        if(curFloor.equalsIgnoreCase("b1")){
-                            FB1Layout.addView(tv);
-                        }else{
-                            FB2Layout.addView(tv);
-                        }
-                    }else{
-
-                        switch(Integer.parseInt(curFloor)) {
+                    //tv.setLayoutParams(textParams);  // textView layout 설정
+                    tv.setGravity(Gravity.CENTER);  // textView layout 설정
+                    if(!c.getString(c.getColumnIndex("floor")).startsWith("B")) {
+                        switch (Integer.parseInt(c.getString(c.getColumnIndex("floor")))) {
                             case 1:
                                 F1Layout.addView(tv);
                                 break;
@@ -86,20 +78,25 @@ public class TotalViewActivity extends BaseActivity {
                                 break;
                         }
                     }
-                }
+                    else{
+                        if(c.getString(c.getColumnIndex("floor")).toLowerCase().equals("b1")){
+                            FB1Layout.addView(tv);
+                        }
+                        else{
+                            FB2Layout.addView(tv);
+                        }
+                    }
+                } while (c.moveToNext());
             }
-
-            c.close();
         }
-
         sampleDB.close();
         setUpAdmin();
     }
-
     View.OnClickListener floorListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             Intent intent = new Intent(getApplicationContext(), FloorActivity.class);
+
             switch(view.getId()){
                 case R.id.total_view_B2:
                     intent.putExtra("Floor", "B2");
@@ -131,11 +128,10 @@ public class TotalViewActivity extends BaseActivity {
             finish();
         }
     };
-
     @Override
     protected void onPause() {
         super.onPause();
-        if(KioskModeApp.isInLockMode){
+        if(KioskModeApp.isInLockMode == true){
             ActivityManager activityManager = (ActivityManager) getApplicationContext()
                     .getSystemService(Context.ACTIVITY_SERVICE);
             activityManager.moveTaskToFront(getTaskId(), 0);
