@@ -12,15 +12,15 @@
         <!-- 상단 호실 이름 텍스트뷰 -->
         <LinearLayout
             android:layout_width="800px"
-            android:layout_height="248.5px"
-            android:layout_marginTop="63.6px"
+            android:layout_height="178.5px"
+            android:layout_marginTop="133.6px"
             android:layout_marginStart="170px"
             android:orientation="vertical"
             android:id="@+id/detail_layout_title">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
+                android:gravity="start|top"
                 android:id="@+id/detail_text_title"
                 android:text="제목이 이렇게까지 긴 동아리는 없겠지 ㄹㅇㅋㅋ"
                 android:textColor="@android:color/black"
