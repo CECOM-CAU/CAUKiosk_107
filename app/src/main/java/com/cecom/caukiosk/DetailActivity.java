@@ -236,7 +236,7 @@ public class DetailActivity extends BaseActivity{
     void runMapAnimationDefault(){
         mapLayout.setScaleX((float) (500.0/ getIntent().getIntExtra("width", 0)));
         mapLayout.setScaleY((float) (150.0/ getIntent().getIntExtra("height", 0)));
-        mapLayoutParams.setMargins(670, 780, 0, 0);
+        mapLayoutParams.setMargins(500, 70, 0, 0);
 
         roomLayoutParams.setMargins(getIntent().getIntExtra("btnMarginLeft", 0)-147, getIntent().getIntExtra("btnMarginTop", 0)- 277, 0, 0);
         roomLayoutParams.width = getIntent().getIntExtra("btnWidth", 0);
