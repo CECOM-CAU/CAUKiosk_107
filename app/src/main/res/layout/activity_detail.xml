@@ -31,15 +31,15 @@
         <LinearLayout
             android:layout_width="490.6px"
             android:layout_height="248.5px"
-            android:layout_marginTop="73.6px"
-            android:layout_marginStart="1054.8px"
+            android:layout_marginTop="160px"
+            android:layout_marginStart="180px"
             android:gravity="center"
             android:orientation="vertical"
             android:id="@+id/detail_layout_number">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="start|top"
                 android:id="@+id/detail_text_number"
                 android:text="XXX호"
                 android:textColor="@android:color/black"
