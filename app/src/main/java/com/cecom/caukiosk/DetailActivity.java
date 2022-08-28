@@ -29,9 +29,7 @@ import java.io.File;
 public class DetailActivity extends BaseActivity{
     String selRoom = "";
 
-    TextView tvInfo;
     TextView tvNum ;
-    TextView tvPhone;
     TextView tvTitle ;
     ImageView imgViewDetail;
 
@@ -40,7 +38,6 @@ public class DetailActivity extends BaseActivity{
     ImageView mapImage;
     Intent intent;
     LinearLayout imageLayout;
-    LinearLayout infoLayout;
     FrameLayout mapLayout;
     LinearLayout numLayout;
     LinearLayout titleLayout;
@@ -57,12 +54,9 @@ public class DetailActivity extends BaseActivity{
         roomView = findViewById(R.id.detail_view_room);
         roomView.setVisibility(View.INVISIBLE)                                                                                                                              ;
         imgViewDetail  = findViewById(R.id.detail_imageView);
-        tvInfo = findViewById(R.id.detail_text_info);
         tvNum = findViewById(R.id.detail_text_number);
-        tvPhone = findViewById(R.id.detail_text_phone);
         tvTitle = findViewById(R.id.detail_text_title);
         imageLayout = findViewById(R.id.detail_layout_image);
-        infoLayout = findViewById  (R.id.detail_layout_info);
         mapLayout = findViewById(R.id.detail_layout_map);
         numLayout = findViewById(R.id.detail_layout_number);
         titleLayout = findViewById(R.id.detail_layout_title);
@@ -70,7 +64,6 @@ public class DetailActivity extends BaseActivity{
         roomLayoutParams = (FrameLayout.LayoutParams)roomView.getLayoutParams();
 
         imageLayout.setVisibility(View.INVISIBLE);
-        infoLayout.setVisibility(View.INVISIBLE);
         numLayout.setVisibility(View.INVISIBLE);
         titleLayout.setVisibility(View.INVISIBLE);
 
@@ -101,7 +94,6 @@ public class DetailActivity extends BaseActivity{
                         //    Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
                         //    imgViewDetail.setImageBitmap(myBitmap);
                         //}
-                       tvInfo.setText(c.getString(c.getColumnIndex("room_desc")));
                        if(c.getString(c.getColumnIndex("id")).toLowerCase().startsWith("b")){
                            String temp = "나동"+c.getString(c.getColumnIndex("id")).substring(1);
                            tvNum.setText(temp);
@@ -109,7 +101,6 @@ public class DetailActivity extends BaseActivity{
                        else{
                            tvNum.setText(c.getString(c.getColumnIndex("id")));
                        }
-                       tvPhone.setText(c.getString(c.getColumnIndex("phone_num")));
                        tvTitle.setText(c.getString(c.getColumnIndex("name")));
                     }
                 } while (c.moveToNext());
@@ -123,17 +114,12 @@ public class DetailActivity extends BaseActivity{
 
     void initLeftPanel(){
         imageLayout.setVisibility(View.VISIBLE);
-        infoLayout.setVisibility(View.VISIBLE);
         numLayout.setVisibility(View.VISIBLE);
         titleLayout.setVisibility(View.VISIBLE);
 
         Typeface typefaceSC = Typeface.createFromAsset(getAssets(), "fonts/SCDreamEB.otf");
         tvNum.setTypeface(typefaceSC);
-        tvPhone.setTypeface(typefaceSC);
         tvTitle.setTypeface(typefaceSC);
-
-        Typeface typefaceNG = Typeface.createFromAsset(getAssets(), "fonts/NanumBarunGothicR.otf");
-        tvInfo.setTypeface(typefaceNG);
     }
 
     void updateFloorButton(String room){
