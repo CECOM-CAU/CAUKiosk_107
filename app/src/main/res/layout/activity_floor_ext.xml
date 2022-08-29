@@ -17,7 +17,7 @@
             android:layout_marginStart="637px"
             android:src="@drawable/img_floor_b2"
             android:id="@+id/floor_map" />
-        
+
     </FrameLayout>
 
     <!-- Left Panel Room Category TextView -->
