@@ -42,6 +42,15 @@ public class FloorActivity extends BaseActivity {
         LinearLayout[] categoryLayout = new LinearLayout[3];
 
         switch(curFloor){
+            case "EXT":
+                setContentView(R.layout.activity_floor_ext);
+                FloorExtButton buttonExtClass = new FloorExtButton();
+                buttonExtClass.initializeButton(this, getWindow().getDecorView());
+                btn_frameLayout = findViewById(R.id.frameLayout_btn);
+                categoryLayout[0] = findViewById(R.id.floor_1_layout_category);
+                makeTextViewGroup();
+                setCategory("ext",categoryLayout);
+                break;
             case "B2":
                 setContentView(R.layout.activity_floor_b2);
                 FloorB2Button buttonB2Class = new FloorB2Button();
