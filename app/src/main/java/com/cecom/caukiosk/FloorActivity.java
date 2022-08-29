@@ -340,8 +340,10 @@ public class FloorActivity extends BaseActivity {
                     }
                     break;
             }
-        }
-        else{
+        }else if(floor.equals("ext")){
+            btnFloor = null;
+            btnFloorDong = findViewById(R.id.main_btn_etc_dong);
+        }else{
             Log.d("floor_number",floor);
             switch(floor.substring(0, 1).toLowerCase()) {
                 case "1":
@@ -372,7 +374,10 @@ public class FloorActivity extends BaseActivity {
 
         }
 
-        btnFloor.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_main_floor_pressed));
+        if(!floor.equals("ext")){
+            btnFloor.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_main_floor_pressed));
+        }
+
         btnFloorDong.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_main_floor_pressed));
     }
 
