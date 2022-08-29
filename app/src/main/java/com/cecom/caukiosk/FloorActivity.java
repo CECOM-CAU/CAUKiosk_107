@@ -194,13 +194,6 @@ public class FloorActivity extends BaseActivity {
                     myView[i].setVisibility(View.VISIBLE);
             }
         }, (1200 + 100 * (22 + 1)));
-        mHandler.postDelayed(new Runnable()  {
-            public void run() {
-                for(int i = 0; i < 21; i++)
-                    myView[i].setVisibility(View.GONE);
-                findViewById(R.id.text_go_na_dong).setVisibility(View.GONE);
-            }
-        }, (1400 + 100 * (22 + 1)));
     }
 
     private void setCategory(String floor, LinearLayout[] categoryLayout) {
