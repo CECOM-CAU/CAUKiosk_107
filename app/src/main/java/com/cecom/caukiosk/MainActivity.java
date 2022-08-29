@@ -4,21 +4,18 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
-import android.app.admin.DevicePolicyManager;
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends BaseActivity {
     int curBG = 4;
+    int tapCnt = 0;
+
     ImageView imageBg1;
     ImageView imageBg2;
     ImageView imageBg3;
@@ -27,12 +24,7 @@ public class MainActivity extends BaseActivity {
     ImageView EasterEgg;
     ImageView EasterEggView;
     ImageView whiteView;
-    boolean lockCount = true;
 
-    DevicePolicyManager devicePolicyManager = null; // devicePolicyManager used to activate device admin
-    ComponentName adminCompName = null;             // adminCompName
-
-    int count = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         overridePendingTransition(0, 0);
@@ -53,12 +45,12 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 if(view.getId() == R.id.image_view_main_logo){
-                    count++;
+                    tapCnt++;
                 }
-                if(count > 10){
-                    Toast.makeText(getApplicationContext(),String.valueOf(count),Toast.LENGTH_SHORT).show();
+                if(tapCnt > 10){
+                    Toast.makeText(getApplicationContext(),String.valueOf(tapCnt),Toast.LENGTH_SHORT).show();
                 }
-                if(count == 35){
+                if(tapCnt == 35){
                     whiteView.setVisibility(View.VISIBLE);
                     EasterEggView.setVisibility(View.VISIBLE);
                     KioskModeApp.setIsInLockMode(!KioskModeApp.isInLockMode);
@@ -74,9 +66,6 @@ public class MainActivity extends BaseActivity {
         mBGHandler.sendEmptyMessage(0);
         setUpAdmin();
     }
-
-
-
 
     Handler mBGHandler = new Handler(){
         @SuppressLint("HandlerLeak")
@@ -183,7 +172,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        if(KioskModeApp.isInLockMode == true){
+        if(KioskModeApp.isInLockMode){
             ActivityManager activityManager = (ActivityManager) getApplicationContext()
                     .getSystemService(Context.ACTIVITY_SERVICE);
             activityManager.moveTaskToFront(getTaskId(), 0);

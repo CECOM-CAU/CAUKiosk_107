@@ -11,61 +11,47 @@
 
         <!-- 상단 호실 이름 텍스트뷰 -->
         <LinearLayout
-            android:layout_width="1000px"
-            android:layout_height="248.5px"
-            android:layout_marginTop="63.6px"
-            android:layout_marginStart="60.6px"
+            android:layout_width="800px"
+            android:layout_height="180px"
+            android:layout_marginTop="120px"
+            android:layout_marginStart="170px"
             android:orientation="vertical"
             android:id="@+id/detail_layout_title">
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
+                android:gravity="start|top"
                 android:id="@+id/detail_text_title"
-                android:text="XXX 강의실"
+                android:text="제목이 이렇게까지 긴 동아리는 없겠지 ㄹㅇㅋㅋ"
                 android:textColor="@android:color/black"
-                android:textSize="50sp" />
-
+                android:textSize="60sp" />
         </LinearLayout>
 
+        <!-- 상단 호실 번호 텍스트뷰 -->
         <LinearLayout
-            android:layout_width="490.6px"
-            android:layout_height="248.5px"
-            android:layout_marginTop="73.6px"
-            android:layout_marginStart="1054.8px"
+            android:layout_width="250px"
+            android:layout_height="150px"
+            android:layout_marginTop="200px"
+            android:layout_marginStart="180px"
             android:gravity="center"
             android:orientation="vertical"
             android:id="@+id/detail_layout_number">
-
-            <!-- 상단 호실 번호 텍스트뷰 -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-                android:gravity="center"
+                android:gravity="start|top"
                 android:id="@+id/detail_text_number"
+                android:text="XXX호"
                 android:textColor="@android:color/black"
-                android:textSize="100px"/>
-
-            <!-- 상단 호실 전화번호 텍스트뷰 -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:id="@+id/detail_text_phone"
-                android:text="02-1234-5678"
-                android:textColor="@android:color/black"
-                android:textSize="50px"/>
-
+                android:textSize="40sp"/>
         </LinearLayout>
 
         <!-- 호실 이미지뷰 -->
         <LinearLayout
-            android:layout_width="975.8px"
-            android:layout_height="698.8px"
+            android:layout_width="1232px"
+            android:layout_height="693px"
             android:layout_marginTop="331.5px"
-            android:layout_marginStart="60.6px"
+            android:layout_marginStart="171.5px"
             android:orientation="vertical"
             android:id="@+id/detail_layout_image">
             <ImageView
@@ -75,32 +61,12 @@
                 android:background="@android:color/darker_gray"/>
         </LinearLayout>
 
-        <!-- 호실 안내 텍스트뷰-->
-        <LinearLayout
-            android:layout_width="442.9px"
-            android:layout_height="366.7px"
-            android:layout_marginTop="333.3px"
-            android:layout_marginStart="1084.8px"
-            android:orientation="vertical"
-            android:id="@+id/detail_layout_info">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:id="@+id/detail_text_info"
-                android:text="asdfasdf"
-                android:textColor="@android:color/black"
-                android:textSize="50px"/>
-
-        </LinearLayout>
-
         <!-- 도면 버튼 이미지뷰 -->
         <Button
-            android:layout_width="442.9px"
-            android:layout_height="366.7px"
-            android:layout_marginTop="660px"
-            android:layout_marginStart="1084.8px"
+            android:layout_width="490px"
+            android:layout_height="180px"
+            android:layout_marginTop="140px"
+            android:layout_marginStart="900px"
             android:background="@android:color/transparent"
             android:id="@+id/detail_btn_return" />
 
@@ -318,30 +284,34 @@
                 android:layout_height="3px"
                 android:background="@android:color/white" />
 
-            <ImageView
+            <Button
                 android:layout_width="match_parent"
-                android:layout_height="138px"
-                android:src="@drawable/logo_main_info_etc" />
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="학생회관 외"
+                android:textSize="55px"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_main_floor_normal"
+                android:id="@+id/main_btn_etc_dong"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3px"
+                android:background="@android:color/white" />
 
         </LinearLayout>
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="3px"
-            android:layout_marginTop="967.7px"
-            android:background="@android:color/white" />
 
         <ImageView
             android:layout_width="106px"
             android:layout_height="102px"
-            android:layout_marginTop="983px"
+            android:layout_marginTop="970px"
             android:background="@drawable/btn_main_home"
             android:id="@+id/main_btn_home"/>
         <ImageView
             android:layout_width="241px"
             android:layout_height="102px"
-            android:layout_marginTop="978px"
+            android:layout_marginTop="970px"
             android:layout_marginLeft="104px"
             android:background="@drawable/dongari_search"
             android:id="@+id/main_btn_search"/>

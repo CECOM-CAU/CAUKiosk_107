@@ -93,6 +93,7 @@ public class BaseActivity extends AppCompatActivity {
         Button btnFloor6 = findViewById(R.id.main_btn_floor_6);
         Button gaDong = findViewById(R.id.main_btn_ga_dong);
         Button naDong = findViewById(R.id.main_btn_na_dong);
+        Button etcDong = findViewById(R.id.main_btn_etc_dong);
 
 
 
@@ -186,6 +187,7 @@ public class BaseActivity extends AppCompatActivity {
 
         gaDong.setTypeface(typefaceBM);
         naDong.setTypeface(typefaceBM);
+        etcDong.setTypeface(typefaceBM);
          }
 
     @Override

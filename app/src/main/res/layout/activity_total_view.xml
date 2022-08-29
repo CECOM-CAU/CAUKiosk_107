@@ -40,31 +40,25 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
                         android:layout_marginTop="262px"
+                        android:orientation="vertical"
                         android:id="@+id/total_view_B1">
                     </LinearLayout>
-                </FrameLayout>
-                <FrameLayout
-                    android:layout_width="235px"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_marginRight="50px"
-                    android:orientation="vertical" >
+
                     <Button
                         android:layout_width="match_parent"
                         android:layout_height="82.5px"
                         android:gravity="center"
                         android:layout_weight="1"
-                        android:layout_marginTop="110px"
+                        android:layout_marginTop="510px"
                         android:textColor="@android:color/white"
                         android:background="@drawable/btn_main_floor_normal"
                         android:text="나동 2F"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginTop="662px"
                         android:orientation="vertical"
-                        android:layout_marginTop="262px"
                         android:id="@+id/total_view_B2">
                     </LinearLayout>
                 </FrameLayout>
@@ -84,13 +78,17 @@
                         android:textColor="@android:color/white"
                         android:background="@drawable/btn_main_floor_normal"
                         android:text="1F"/>
-                    <LinearLayout
+                    <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_marginTop="262px"
-                        android:id="@+id/total_view_1">
-                    </LinearLayout>
+                        android:layout_marginTop="262px">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:id="@+id/total_view_1">
+                        </LinearLayout>
+                    </ScrollView>
                 </FrameLayout>
                 <FrameLayout
                     android:layout_width="235px"
@@ -107,13 +105,17 @@
                         android:textColor="@android:color/white"
                         android:background="@drawable/btn_main_floor_normal"
                         android:text="2F"/>
-                    <LinearLayout
+                    <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_marginTop="262px"
-                        android:id="@+id/total_view_2">
-                    </LinearLayout>
+                        android:layout_marginTop="262px">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:id="@+id/total_view_2">
+                        </LinearLayout>
+                    </ScrollView>
                 </FrameLayout>
                 <FrameLayout
                     android:layout_width="235px"
@@ -130,13 +132,17 @@
                         android:textColor="@android:color/white"
                         android:background="@drawable/btn_main_floor_normal"
                         android:text="3F"/>
-                    <LinearLayout
+                    <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_marginTop="262px"
-                        android:id="@+id/total_view_3">
-                    </LinearLayout>
+                        android:layout_marginTop="262px">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:id="@+id/total_view_3">
+                        </LinearLayout>
+                    </ScrollView>
                 </FrameLayout>
                 <FrameLayout
                     android:layout_width="235px"
@@ -153,13 +159,17 @@
                         android:textColor="@android:color/white"
                         android:background="@drawable/btn_main_floor_normal"
                         android:text="4F"/>
-                    <LinearLayout
+                    <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_marginTop="262px"
-                        android:id="@+id/total_view_4">
-                    </LinearLayout>
+                        android:layout_marginTop="262px">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:id="@+id/total_view_4">
+                        </LinearLayout>
+                    </ScrollView>
                 </FrameLayout>
                 <FrameLayout
                     android:layout_width="235px"
@@ -176,13 +186,17 @@
                         android:textColor="@android:color/white"
                         android:background="@drawable/btn_main_floor_normal"
                         android:text="5F"/>
-                    <LinearLayout
+                    <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_marginTop="262px"
-                        android:id="@+id/total_view_5">
+                        android:layout_marginTop="262px">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:id="@+id/total_view_5">
                     </LinearLayout>
+                    </ScrollView>
                 </FrameLayout>
                 <FrameLayout
                     android:layout_width="235px"
@@ -199,13 +213,18 @@
                         android:textColor="@android:color/white"
                         android:background="@drawable/btn_main_floor_normal"
                         android:text="6F"/>
-                    <LinearLayout
+
+                    <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_marginTop="262px"
-                        android:id="@+id/total_view_6">
-                    </LinearLayout>
+                        android:layout_marginTop="262px">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:id="@+id/total_view_6">
+                        </LinearLayout>
+                    </ScrollView>
                 </FrameLayout>
                 <FrameLayout
                     android:layout_width="135px"
@@ -411,30 +430,34 @@
                 android:layout_height="3px"
                 android:background="@android:color/white" />
 
-            <ImageView
+            <Button
                 android:layout_width="match_parent"
-                android:layout_height="138px"
-                android:src="@drawable/logo_main_info_etc" />
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="학생회관 외"
+                android:textSize="55px"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_main_floor_normal"
+                android:id="@+id/main_btn_etc_dong"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3px"
+                android:background="@android:color/white" />
 
         </LinearLayout>
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="3px"
-            android:layout_marginTop="967.7px"
-            android:background="@android:color/white" />
 
         <ImageView
             android:layout_width="106px"
             android:layout_height="102px"
-            android:layout_marginTop="983px"
+            android:layout_marginTop="970px"
             android:background="@drawable/btn_main_home"
             android:id="@+id/main_btn_home"/>
         <ImageView
             android:layout_width="241px"
             android:layout_height="102px"
-            android:layout_marginTop="978px"
+            android:layout_marginTop="970px"
             android:layout_marginLeft="104px"
             android:background="@drawable/dongari_search"
             android:id="@+id/main_btn_search"/>
