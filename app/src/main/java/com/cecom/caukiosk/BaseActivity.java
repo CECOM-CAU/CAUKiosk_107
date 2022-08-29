@@ -83,6 +83,7 @@ public class BaseActivity extends AppCompatActivity {
 
 
 
+        Button btnExtDong = findViewById(R.id.main_btn_etc_dong);
         Button btnFloorB2 = findViewById(R.id.main_btn_floor_b2);
         Button btnFloorB1 = findViewById(R.id.main_btn_floor_b1);
         Button btnFloor1 = findViewById(R.id.main_btn_floor_1);
@@ -93,11 +94,10 @@ public class BaseActivity extends AppCompatActivity {
         Button btnFloor6 = findViewById(R.id.main_btn_floor_6);
         Button gaDong = findViewById(R.id.main_btn_ga_dong);
         Button naDong = findViewById(R.id.main_btn_na_dong);
-        Button etcDong = findViewById(R.id.main_btn_etc_dong);
 
 
 
-        ImageView btnFacility = findViewById(R.id.main_btn_facility);
+        final ImageView btnFacility = findViewById(R.id.main_btn_facility);
         ImageView btnHome = findViewById(R.id.main_btn_home);
         ImageView btnSearch = findViewById(R.id.main_btn_search);
         View.OnClickListener btnListener = new View.OnClickListener() {
@@ -127,6 +127,9 @@ public class BaseActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), FloorActivity.class);
 
                 switch(view.getId()){
+                    case R.id.main_btn_etc_dong:
+                        intent.putExtra("Floor", "EXT");
+                        break;
                     case R.id.main_btn_floor_b2:
                         intent.putExtra("Floor", "B2");
                         break;
@@ -164,7 +167,7 @@ public class BaseActivity extends AppCompatActivity {
         btnSearch.setOnClickListener(btnListener);
         btnHome.setOnClickListener(btnListener);
 
-
+        btnExtDong.setOnClickListener(floorListener);
         btnFloorB2.setOnClickListener(floorListener);
         btnFloorB1.setOnClickListener(floorListener);
         btnFloor1.setOnClickListener(floorListener);
@@ -185,10 +188,10 @@ public class BaseActivity extends AppCompatActivity {
         btnFloor6.setTypeface(typefaceFloorBtn);
 
 
+        btnExtDong.setTypeface(typefaceBM);
         gaDong.setTypeface(typefaceBM);
         naDong.setTypeface(typefaceBM);
-        etcDong.setTypeface(typefaceBM);
-         }
+    }
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
