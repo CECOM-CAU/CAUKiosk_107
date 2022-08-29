@@ -33,7 +33,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:id="@+id/floor_1_layout_category"
-            android:orientation="vertical">
+            android:orientation="horizontal">
         </LinearLayout>
     </LinearLayout>
 
