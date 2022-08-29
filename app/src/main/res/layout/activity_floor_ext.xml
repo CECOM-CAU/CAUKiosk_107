@@ -13,7 +13,7 @@
         <ImageView
             android:layout_width="1280px"
             android:layout_height="720px"
-            android:layout_marginTop="120px"
+            android:layout_marginTop="100px"
             android:layout_marginStart="147px"
             android:src="@drawable/img_floor_b2"
             android:id="@+id/floor_map" />
