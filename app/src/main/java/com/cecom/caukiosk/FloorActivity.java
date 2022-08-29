@@ -267,7 +267,7 @@ public class FloorActivity extends BaseActivity {
                     }
                 }
             });
-            if(floor.equals("b1") || floor.equals("b2")){
+            if(floor.equals("b1") || floor.equals("b2") || floor.equals("ext")){
                 categoryLayout[0].addView(tempView);
             }
             else{
