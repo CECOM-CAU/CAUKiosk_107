@@ -11,45 +11,25 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
 import com.cecom.caukiosk.buttons.*;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
 
 public class FloorActivity extends BaseActivity {
     String curFloor = "1";
+
+    Button tempButton;
     FrameLayout btn_frameLayout;
-    //FrameLayout textView_frameLayout;
     Typeface typefaceNG;
     Typeface typefaceSC;
-    TextView tempView;
-    Button tempButton;
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        int x = (int)event.getX();
-        int y = (int)event.getY();
-
-        if(event.getAction() == MotionEvent.ACTION_DOWN){
-            Log.d("POINT", String.format(Locale.getDefault(), "%d %d", x, y));
-        }
-
-        return false;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +50,7 @@ public class FloorActivity extends BaseActivity {
                 categoryLayout[0] = findViewById(R.id.floor_1_layout_category);
                 makeTextViewGroup();
                 setCategory("b2",categoryLayout);
-                start_line("b2",categoryLayout);
+                start_line();
                 break;
             case "B1":
                 setContentView(R.layout.activity_floor_b1);
@@ -80,7 +60,7 @@ public class FloorActivity extends BaseActivity {
                 categoryLayout[0] = findViewById(R.id.floor_1_layout_category);
                 setCategory("b1",categoryLayout);
                 makeTextViewGroup();
-                start_line("b1",categoryLayout);
+                start_line();
                 break;
             case "1":
                 setContentView(R.layout.activity_floor_1);
@@ -90,7 +70,6 @@ public class FloorActivity extends BaseActivity {
                 categoryLayout[0] = findViewById(R.id.floor_1_layout_category);
                 categoryLayout[1] = findViewById(R.id.floor_2_layout_category);
                 categoryLayout[2] = findViewById(R.id.floor_3_layout_category);
-                //textView_frameLayout = findViewById(R.id.frameLayout_textview_1);
                 setCategory("1",categoryLayout);
                 makeTextViewGroup();
                 break;
@@ -102,7 +81,6 @@ public class FloorActivity extends BaseActivity {
                 categoryLayout[0] = findViewById(R.id.floor_1_layout_category);
                 categoryLayout[1] = findViewById(R.id.floor_2_layout_category);
                 categoryLayout[2] = findViewById(R.id.floor_3_layout_category);
-                //textView_frameLayout = findViewById(R.id.frameLayout_textview_2);
                 setCategory("2",categoryLayout);
                 makeTextViewGroup();
                 break;
@@ -114,7 +92,6 @@ public class FloorActivity extends BaseActivity {
                 categoryLayout[0] = findViewById(R.id.floor_1_layout_category);
                 categoryLayout[1] = findViewById(R.id.floor_2_layout_category);
                 categoryLayout[2] = findViewById(R.id.floor_3_layout_category);
-                //textView_frameLayout = findViewById(R.id.frameLayout_textview_3);
                 setCategory("3",categoryLayout);
                 makeTextViewGroup();
                 break;
@@ -127,7 +104,6 @@ public class FloorActivity extends BaseActivity {
                 categoryLayout[0] = findViewById(R.id.floor_1_layout_category);
                 categoryLayout[1] = findViewById(R.id.floor_2_layout_category);
                 categoryLayout[2] = findViewById(R.id.floor_3_layout_category);
-                //tex   tView_frameLayout = findViewById(R.id.frameLayout_textview_4);
                 setCategory("4",categoryLayout);
                 makeTextViewGroup();
                 break;
@@ -140,7 +116,6 @@ public class FloorActivity extends BaseActivity {
                 categoryLayout[0] = findViewById(R.id.floor_1_layout_category);
                 categoryLayout[1] = findViewById(R.id.floor_2_layout_category);
                 categoryLayout[2] = findViewById(R.id.floor_3_layout_category);
-                //textView_frameLayout = findViewById(R.id.frameLayout_textview_5);
                 setCategory("5",categoryLayout);
                 makeTextViewGroup();
                 break;
@@ -153,7 +128,6 @@ public class FloorActivity extends BaseActivity {
                 categoryLayout[0] = findViewById(R.id.floor_1_layout_category);
                 categoryLayout[1] = findViewById(R.id.floor_2_layout_category);
                 categoryLayout[2] = findViewById(R.id.floor_3_layout_category);
-                //textView_frameLayout = findViewById(R.id.frameLayout_textview_6);
                 setCategory("6",categoryLayout);
                 makeTextViewGroup();
                 break;
@@ -162,8 +136,8 @@ public class FloorActivity extends BaseActivity {
         setUpAdmin();
     }
 
-    private void start_line(final String floor, final LinearLayout[] categoryLayout) {
-        final ImageView myView[] = new ImageView[21];
+    private void start_line() {
+        final ImageView[] myView = new ImageView[21];
         myView[0] = findViewById(R.id.line0);
         myView[1] = findViewById(R.id.line0_1);
         myView[2] = findViewById(R.id.line1);
@@ -193,7 +167,7 @@ public class FloorActivity extends BaseActivity {
                 public void run() {
                    myView[finalI].setVisibility(View.VISIBLE);
                 }
-            }, (int)(100+100*(i+1))); // 0.5초후
+            }, (100 + 100 * (i + 1)));
 
         }
         mHandler.postDelayed(new Runnable()  {
@@ -201,33 +175,32 @@ public class FloorActivity extends BaseActivity {
                 for(int i = 0; i < 21; i++)
                 myView[i].setVisibility(View.GONE);
             }
-        }, (int)(400+100*(22+1))); // 0.5초후
+        }, (400 + 100 * (22 + 1)));
         mHandler.postDelayed(new Runnable()  {
             public void run() {
                 for(int i = 0; i < 21; i++)
                     myView[i].setVisibility(View.VISIBLE);
             }
-        }, (int)(700+100*(22+1))); // 0.5초후
+        }, (700 + 100 * (22 + 1)));
         mHandler.postDelayed(new Runnable()  {
             public void run() {
                 for(int i = 0; i < 21; i++)
                     myView[i].setVisibility(View.GONE);
             }
-        }, (int)(1000+100*(22+1))); // 0.5초후
+        }, (1000 + 100 * (22 + 1)));
         mHandler.postDelayed(new Runnable()  {
             public void run() {
                 for(int i = 0; i < 21; i++)
                     myView[i].setVisibility(View.VISIBLE);
             }
-        }, (int)(1200+100*(22+1))); // 0.5초후
+        }, (1200 + 100 * (22 + 1)));
         mHandler.postDelayed(new Runnable()  {
             public void run() {
                 for(int i = 0; i < 21; i++)
                     myView[i].setVisibility(View.GONE);
                 findViewById(R.id.text_go_na_dong).setVisibility(View.GONE);
-
             }
-        }, (int)(1400+100*(22+1))); // 0.5초후
+        }, (1400 + 100 * (22 + 1)));
     }
 
     private void setCategory(String floor, LinearLayout[] categoryLayout) {
@@ -235,7 +208,6 @@ public class FloorActivity extends BaseActivity {
         CategoryArrayList<Category> cateList = new CategoryArrayList<>();
         SQLiteDatabase sampleDB =  SQLiteDatabase.openOrCreateDatabase(file,  null);
         Cursor c = sampleDB.rawQuery("SELECT * FROM total_desc",null);
-        //String cate = "";
         if (c != null) {
             if (c.moveToFirst()) {
                 do {
@@ -243,10 +215,7 @@ public class FloorActivity extends BaseActivity {
                     if(c.getString(c.getColumnIndex("floor")).toLowerCase().equals(floor)){
                         String cate = c.getString(c.getColumnIndex("name"));
                         Log.d("asb",cate);
-                        if(cate.equals("")){
-                            continue;
-                        }
-                        else{
+                        if(!cate.equals("")){
                             int index = cateList.contains(cate);
                             if(index != -1){
                                 String temp = cateList.get(index).room;
@@ -264,6 +233,8 @@ public class FloorActivity extends BaseActivity {
                     }
                 } while (c.moveToNext());
             }
+
+            c.close();
         }
 
         for(int i = 0; i < cateList.size(); i++){
@@ -352,7 +323,7 @@ public class FloorActivity extends BaseActivity {
             switch(floor.substring(1, 2)){
                 case "1":
                     Log.d("input_b","b");
-                    if(floor.substring(1, 2).equals("1")){
+                    if(floor.charAt(1) == '1'){
                         Log.d("input_b1","b1");
                         btnFloor = findViewById(R.id.main_btn_floor_b1);
                         btnFloorDong = findViewById(R.id.main_btn_na_dong);
@@ -360,7 +331,7 @@ public class FloorActivity extends BaseActivity {
                     break;
                 case "2":
                     Log.d("input_b","b");
-                    if(floor.substring(1, 2).equals("2")){
+                    if(floor.charAt(1) == '2'){
                         Log.d("input_b2","b2");
                         btnFloor = findViewById(R.id.main_btn_floor_b2);
                         btnFloorDong = findViewById(R.id.main_btn_na_dong);
@@ -406,7 +377,7 @@ public class FloorActivity extends BaseActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        if(KioskModeApp.isInLockMode == true){
+        if(KioskModeApp.isInLockMode){
             ActivityManager activityManager = (ActivityManager) getApplicationContext()
                     .getSystemService(Context.ACTIVITY_SERVICE);
             activityManager.moveTaskToFront(getTaskId(), 0);
