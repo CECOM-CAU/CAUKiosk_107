@@ -94,8 +94,9 @@ public class SearchActivity extends BaseActivity {
                                                         intent.putExtra("Floor", "B2");
                                                         break;
                                                 }
-                                            }
-                                            else{
+                                            }else if(roomNum.length() > 3) {
+                                                intent.putExtra("Floor", "EXT");
+                                            }else{
                                                 switch(roomNum.charAt(0)){
                                                     case '1':
                                                         intent.putExtra("Floor", "1");
