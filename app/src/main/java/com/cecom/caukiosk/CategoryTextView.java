@@ -1,14 +1,14 @@
 package com.cecom.caukiosk;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Typeface;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+@SuppressLint("ViewConstructor")
 public class CategoryTextView extends LinearLayout{
     TextView tvNumber;
     TextView tvTitle;
@@ -18,40 +18,7 @@ public class CategoryTextView extends LinearLayout{
         initView(number, title);
     }
 
-    public CategoryTextView(Context context, AttributeSet attrs, String number, String title) {
-        super(context, attrs);
-        initView(number, title);
-        getAttrs(attrs);
-    }
 
-    public CategoryTextView(Context context, AttributeSet attrs, int defStyle, String number, String title) {
-        super(context, attrs);
-        initView(number, title);
-        getAttrs(attrs, defStyle);
-    }
-
-    private void getAttrs(AttributeSet attrs) {
-        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.CategoryTextView);
-        setTypeArray(typedArray);
-    }
-
-
-    private void getAttrs(AttributeSet attrs, int defStyle) {
-        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.CategoryTextView, defStyle, 0);
-        setTypeArray(typedArray);
-    }
-
-
-    private void setTypeArray(TypedArray typedArray) {
-        String strNumber = typedArray.getString(R.styleable.CategoryTextView_number);
-        tvNumber.setText(strNumber);
-
-        String strTitle = typedArray.getString(R.styleable.CategoryTextView_title);
-        tvTitle.setText(strTitle);
-
-        typedArray.recycle();
-
-    }
 
     private void initView(String number, String title){
         LayoutInflater inflater = (LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);

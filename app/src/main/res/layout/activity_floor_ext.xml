@@ -1,100 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
+    <!-- Left Panel -->
     <FrameLayout
         android:layout_width="1575px"
         android:layout_height="match_parent">
 
-        <!-- 상단 호실 이름 텍스트뷰 -->
-        <LinearLayout
-            android:layout_width="800px"
-            android:layout_height="180px"
-            android:layout_marginTop="120px"
-            android:layout_marginStart="170px"
-            android:orientation="vertical"
-            android:id="@+id/detail_layout_title">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="start|top"
-                android:id="@+id/detail_text_title"
-                android:text="제목이 이렇게까지 긴 동아리는 없겠지 ㄹㅇㅋㅋ"
-                android:textColor="@android:color/black"
-                android:textSize="60sp" />
-        </LinearLayout>
-
-        <!-- 상단 호실 번호 텍스트뷰 -->
-        <LinearLayout
-            android:layout_width="800px"
-            android:layout_height="150px"
-            android:layout_marginTop="200px"
-            android:layout_marginStart="180px"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:id="@+id/detail_layout_number">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="start|top"
-                android:id="@+id/detail_text_number"
-                android:text="XXX호"
-                android:textColor="@android:color/black"
-                android:textSize="40sp"/>
-        </LinearLayout>
-
-        <!-- 호실 이미지뷰 -->
-        <LinearLayout
-            android:layout_width="1232px"
-            android:layout_height="693px"
-            android:layout_marginTop="331.5px"
-            android:layout_marginStart="171.5px"
-            android:orientation="vertical"
-            android:id="@+id/detail_layout_image">
-            <ImageView
-                android:id="@+id/detail_imageView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/darker_gray"/>
-        </LinearLayout>
-
-        <!-- 도면 버튼 이미지뷰 -->
-        <Button
-            android:layout_width="490px"
-            android:layout_height="180px"
-            android:layout_marginTop="140px"
-            android:layout_marginStart="900px"
-            android:background="@android:color/transparent"
-            android:id="@+id/detail_btn_return" />
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:id="@+id/detail_layout_map">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/detail_image_map" />
-
-            <View
-                android:layout_width="50px"
-                android:layout_height="20px"
-                android:layout_margin="5dp"
-                android:background="@android:color/holo_red_light"
-                android:id="@+id/detail_view_room"/>
-
-        </FrameLayout>
+        <ImageView
+            android:layout_width="1280px"
+            android:layout_height="720px"
+            android:layout_marginTop="100px"
+            android:layout_marginStart="147px"
+            android:background="@android:color/darker_gray"
+            android:id="@+id/floor_map" />
 
     </FrameLayout>
 
+    <!-- Left Panel Room Category TextView -->
+    <LinearLayout
+        android:layout_width="1280px"
+        android:layout_height="150px"
+        android:layout_marginLeft="147px"
+        android:layout_marginTop="850px"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/floor_1_layout_category"
+            android:orientation="horizontal">
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout_textview_b4"
+        android:layout_width="1575px"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+    <!-- Left Panel Room Buttons -->
+    <FrameLayout
+        android:layout_width="1575px"
+        android:layout_height="match_parent"
+        android:id="@+id/frameLayout_btn">
+
+        <Button
+            android:layout_width="91px"
+            android:layout_height="130px"
+            android:layout_marginTop="357px"
+            android:layout_marginStart="860px"
+            android:text="b201"
+            android:id="@+id/btn_room_b201" />
+
+        <Button
+            android:layout_width="91px"
+            android:layout_height="130px"
+            android:layout_marginTop="357px"
+            android:layout_marginStart="755px"
+            android:text="b202"
+            android:id="@+id/btn_room_b202" />
+        <Button
+            android:layout_width="65px"
+            android:layout_height="190px"
+            android:layout_marginTop="302px"
+            android:layout_marginStart="675px"
+            android:text="b203"
+            android:id="@+id/btn_room_b203" />
+
+    </FrameLayout>
+
+    <!-- Right Panel -->
     <FrameLayout
         android:layout_width="345px"
         android:layout_height="match_parent"
+        android:layout_marginStart="1575px"
         android:background="@color/mainPanelBG">
 
         <ImageView
@@ -319,4 +305,4 @@
 
     </FrameLayout>
 
-</LinearLayout>
+</FrameLayout>

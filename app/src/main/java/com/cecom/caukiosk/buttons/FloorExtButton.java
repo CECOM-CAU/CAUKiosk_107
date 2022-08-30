@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import com.cecom.caukiosk.FloorActivity;
 import com.cecom.caukiosk.R;
 
-public class FloorB2Button {
+public class FloorExtButton {
     FloorActivity floorActivity;
     View view;
 
