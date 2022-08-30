@@ -28,65 +28,57 @@
                     android:gravity="center"
                     android:layout_marginRight="50px"
                     android:orientation="vertical" >
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="82.5px"
-                        android:gravity="center"
-                        android:layout_weight="1"
-                        android:layout_marginTop="110px"
-                        android:textColor="@android:color/white"
-                        android:background="@drawable/btn_main_floor_normal"
-                        android:text="나동 1F"/>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="262px"
-                        android:orientation="vertical"
-                        android:id="@+id/total_view_B1">
-                    </LinearLayout>
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="82.5px"
-                        android:gravity="center"
-                        android:layout_weight="1"
-                        android:layout_marginTop="510px"
-                        android:textColor="@android:color/white"
-                        android:background="@drawable/btn_main_floor_normal"
-                        android:text="나동 2F"/>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="662px"
-                        android:orientation="vertical"
-                        android:id="@+id/total_view_B2">
-                    </LinearLayout>
-                </FrameLayout>
-
-                <FrameLayout
-                    android:layout_width="235px"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_marginRight="50px"
-                    android:orientation="vertical" >
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="82.5px"
-                        android:gravity="center"
-                        android:layout_weight="1"
-                        android:layout_marginTop="110px"
-                        android:textColor="@android:color/white"
-                        android:background="@drawable/btn_main_floor_normal"
-                        android:text="학생회관 외"/>
                     <ScrollView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="262px">
+                        android:layout_height="match_parent">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:id="@+id/total_view_ext">
+                            android:orientation="vertical">
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="82.5px"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:textColor="@android:color/white"
+                                android:background="@drawable/btn_main_floor_normal"
+                                android:text="나동 1F"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:id="@+id/total_view_B1">
+                            </LinearLayout>
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="82.5px"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:textColor="@android:color/white"
+                                android:background="@drawable/btn_main_floor_normal"
+                                android:text="나동 2F"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:id="@+id/total_view_B2">
+                            </LinearLayout>
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="82.5px"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:textColor="@android:color/white"
+                                android:background="@drawable/btn_main_floor_normal"
+                                android:text="학생회관 외"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:id="@+id/total_view_ext">
+                            </LinearLayout>
                         </LinearLayout>
                     </ScrollView>
                 </FrameLayout>
