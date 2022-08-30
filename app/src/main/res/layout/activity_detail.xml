@@ -29,7 +29,7 @@
 
         <!-- 상단 호실 번호 텍스트뷰 -->
         <LinearLayout
-            android:layout_width="250px"
+            android:layout_width="800px"
             android:layout_height="150px"
             android:layout_marginTop="200px"
             android:layout_marginStart="180px"
