@@ -77,7 +77,7 @@
                         android:layout_marginTop="110px"
                         android:textColor="@android:color/white"
                         android:background="@drawable/btn_main_floor_normal"
-                        android:text="1F"/>
+                        android:text="학생회관 외"/>
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
