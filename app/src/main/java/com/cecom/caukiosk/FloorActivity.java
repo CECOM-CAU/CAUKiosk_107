@@ -249,8 +249,10 @@ public class FloorActivity extends BaseActivity {
                 public void onClick(View view) {
                     String roomNum = tempView.tvNumber.getText().toString();
                     Log.d("test",roomNum);
+
                     ImageView mapImage = findViewById(R.id.floor_map);
 
+                    boolean isEXT = true;
                     int mapHeight = mapImage.getHeight();
                     int mapWidth = mapImage.getWidth();
                     int mapMarginLeft = mapImage.getLeft();
@@ -261,9 +263,14 @@ public class FloorActivity extends BaseActivity {
                         Log.d("btn",selButton.getText().toString());
                         if(selButton.getText().toString().toLowerCase().trim().equals(roomNum.toLowerCase().trim())){
                             Log.d("input",roomNum);
+                            isEXT = false;
                             openRoomInfo(roomNum, mapWidth, mapHeight, mapMarginLeft, mapMarginTop, selButton.getWidth(), selButton.getHeight(), selButton.getLeft(), selButton.getTop(), selButton.getRotation());
                             break;
                         }
+                    }
+
+                    if(isEXT){
+                        openRoomInfo(roomNum, 0, 0, 0, 0, 0, 0, 0, 0, 0);
                     }
                 }
             });
