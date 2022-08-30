@@ -1,25 +1,15 @@
 package com.cecom.caukiosk.buttons;
 
-import android.graphics.Color;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.TextView;
-
-import androidx.core.content.ContextCompat;
 
 import com.cecom.caukiosk.FloorActivity;
 import com.cecom.caukiosk.R;
 
-import org.w3c.dom.Text;
-
 public class Floor3Button {
     FloorActivity floorActivity;
     View view;
-    FrameLayout btn_frameLayout;
-    FrameLayout textView_frameLayout;
 
     public void initializeButton(FloorActivity floorActivity, View view){
         this.floorActivity = floorActivity;

@@ -22,8 +22,6 @@ public class FloorB2Button {
         button201.setOnClickListener(buttonListener);
         button202.setOnClickListener(buttonListener);
         button203.setOnClickListener(buttonListener);
-
-
     }
 
     View.OnClickListener buttonListener = new View.OnClickListener() {

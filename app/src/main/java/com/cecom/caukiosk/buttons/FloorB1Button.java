@@ -20,8 +20,6 @@ public class FloorB1Button {
 
         button101.setOnClickListener(buttonListener);
         button101_1.setOnClickListener(buttonListener);
-
-
     }
 
     View.OnClickListener buttonListener = new View.OnClickListener() {

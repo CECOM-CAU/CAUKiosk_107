@@ -19,7 +19,6 @@ public class Floor6Button {
         Button button603 = view.findViewById(R.id.btn_room_603);
         Button button604 = view.findViewById(R.id.btn_room_604);
         Button button605 = view.findViewById(R.id.btn_room_605);
-       // Button button606 = view.findViewById(R.id.btn_room_606);
         Button button607 = view.findViewById(R.id.btn_room_607);
         Button button608 = view.findViewById(R.id.btn_room_608);
         Button button609 = view.findViewById(R.id.btn_room_609);
@@ -28,14 +27,11 @@ public class Floor6Button {
         Button button612 = view.findViewById(R.id.btn_room_612);
         Button button613 = view.findViewById(R.id.btn_room_613);
 
-
-
         button601.setOnClickListener(buttonListener);
         button602.setOnClickListener(buttonListener);
         button603.setOnClickListener(buttonListener);
         button604.setOnClickListener(buttonListener);
         button605.setOnClickListener(buttonListener);
-        //button606.setOnClickListener(buttonListener);
         button607.setOnClickListener(buttonListener);
         button608.setOnClickListener(buttonListener);
         button609.setOnClickListener(buttonListener);
@@ -43,9 +39,6 @@ public class Floor6Button {
         button611.setOnClickListener(buttonListener);
         button612.setOnClickListener(buttonListener);
         button613.setOnClickListener(buttonListener);
-
-
-
     }
 
     View.OnClickListener buttonListener = new View.OnClickListener() {
