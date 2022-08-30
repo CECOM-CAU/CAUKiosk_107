@@ -1,6 +1,5 @@
 package com.cecom.caukiosk;
 
-import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
@@ -21,7 +20,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.io.File;
-import java.util.ArrayList;
 
 public class SearchActivity extends BaseActivity {
     boolean showKeyboard = false;
@@ -64,8 +62,7 @@ public class SearchActivity extends BaseActivity {
                 File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator, "building_107.db");
                 SQLiteDatabase sampleDB =  SQLiteDatabase.openOrCreateDatabase(file,  null);
                 Cursor c = sampleDB.rawQuery("SELECT * FROM total_desc",null);
-                String input_string = "";
-                ArrayList<String> outputString = new ArrayList<>();
+                String input_string;
                 int empty_count = 0;
                 F1Layout.removeAllViews();
                 F2Layout.removeAllViews();
@@ -129,11 +126,8 @@ public class SearchActivity extends BaseActivity {
                                     LinearLayout.LayoutParams tempViewParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
                                     tempViewParams.setMargins(0,0,0,13);
                                     tv.setLayoutParams(tempViewParams);
-
-                                    //tv.setLayoutParams(textParams);  // textView layout 설정
-                                    tv.setGravity(Gravity.TOP);  // textView layout 설정
-                                    //outputString.add(c.getString(i));
-                                    switch((int)(num%4)){
+                                    tv.setGravity(Gravity.TOP);
+                                    switch(num%4){
                                         case 0:
                                             F1Layout.addView(tv);
                                             break;
@@ -150,11 +144,9 @@ public class SearchActivity extends BaseActivity {
                                     break;
                                 }
                             }
-
-
-
                         } while (c.moveToNext());
                     }
+                    c.close();
                 }
                 if (empty_count == 0){
                     no_search_view.setVisibility(View.VISIBLE);
@@ -200,7 +192,7 @@ public class SearchActivity extends BaseActivity {
     View.OnClickListener btnListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            if(showKeyboard == false){
+            if(!showKeyboard){
                 imm.showSoftInput(input1, 0);
                 showKeyboard = true;
             }
@@ -239,7 +231,7 @@ public class SearchActivity extends BaseActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        if(KioskModeApp.isInLockMode == true){
+        if(KioskModeApp.isInLockMode){
             ActivityManager activityManager = (ActivityManager) getApplicationContext()
                     .getSystemService(Context.ACTIVITY_SERVICE);
             activityManager.moveTaskToFront(getTaskId(), 0);
