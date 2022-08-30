@@ -143,69 +143,73 @@ public class DetailActivity extends BaseActivity{
                     }
                     break;
             }
+        }else if(room.length() > 3) {
+            btnFloor = null;
+            btnFloorDong = findViewById(R.id.main_btn_etc_dong);
+            runMapAnimationDefault();
         }else{
-            if(room.length() == 3 || room.length() == 5 || room.length() == 4|| room.length() == 6){
-                switch(room.substring(0, 1).toLowerCase()) {
-                    case "1":
-                        btnFloor = findViewById(R.id.main_btn_floor_1);
-                        btnFloorDong = findViewById(R.id.main_btn_ga_dong);
-                        mapImage.setImageResource(R.drawable.img_floor_1);
-                        intent.putExtra("Floor", "1");
-                        mapLayoutParams.setMargins(getIntent().getIntExtra("marginLeft", 0), getIntent().getIntExtra("marginTop", 0), 0, 0);
-                        runMapAnimationDefault();
-                        break;
-                    case "2":
-                        btnFloor = findViewById(R.id.main_btn_floor_2);
-                        btnFloorDong = findViewById(R.id.main_btn_ga_dong);
-                        mapImage.setImageResource(R.drawable.img_floor_2);
-                        intent.putExtra("Floor", "2");
-                        mapLayoutParams.setMargins(getIntent().getIntExtra("marginLeft", 0), getIntent().getIntExtra("marginTop", 0), 0, 0);
-                        runMapAnimationDefault();
-                        break;
-                    case "3":
-                        btnFloor = findViewById(R.id.main_btn_floor_3);
-                        btnFloorDong = findViewById(R.id.main_btn_ga_dong);
-                        mapImage.setImageResource(R.drawable.img_floor_3);
-                        intent.putExtra("Floor", "3");
-                        mapLayoutParams.setMargins(getIntent().getIntExtra("marginLeft", 0), getIntent().getIntExtra("marginTop", 0), 0, 0);
-                        runMapAnimation3F();
-                        break;
-                    case "4":
-                        btnFloor = findViewById(R.id.main_btn_floor_4);
-                        btnFloorDong = findViewById(R.id.main_btn_ga_dong);
-                        mapImage.setImageResource(R.drawable.img_floor_4);
-                        intent.putExtra("Floor", "4");
-                        mapLayoutParams.setMargins(getIntent().getIntExtra("marginLeft", 0), getIntent().getIntExtra("marginTop", 0), 0, 0);
-                        mHandler.postDelayed(new Runnable()  {
-                            public void run() {
-                                runMapAnimation3F();
-                            }
-                        }, 700); // 0.5초후
-                        break;
-                    case "5":
-                        btnFloor = findViewById(R.id.main_btn_floor_5);
-                        btnFloorDong = findViewById(R.id.main_btn_ga_dong);
-                        mapImage.setImageResource(R.drawable.img_floor_5);
-                        intent.putExtra("Floor", "5");
-                        mapLayoutParams.setMargins(getIntent().getIntExtra("marginLeft", 0), getIntent().getIntExtra("marginTop", 0), 0, 0);
-                        runMapAnimation3F();
-                        break;
-                    case "6":
-                        btnFloor = findViewById(R.id.main_btn_floor_6);
-                        btnFloorDong = findViewById(R.id.main_btn_ga_dong);
-                        mapImage.setImageResource(R.drawable.img_floor_6);
-                        intent.putExtra("Floor", "6");
-                        mapLayoutParams.setMargins(getIntent().getIntExtra("marginLeft", 0), getIntent().getIntExtra("marginTop", 0), 0, 0);
-                        runMapAnimation3F();
-                        break;
+            switch(room.substring(0, 1).toLowerCase()) {
+                case "1":
+                    btnFloor = findViewById(R.id.main_btn_floor_1);
+                    btnFloorDong = findViewById(R.id.main_btn_ga_dong);
+                    mapImage.setImageResource(R.drawable.img_floor_1);
+                    intent.putExtra("Floor", "1");
+                    mapLayoutParams.setMargins(getIntent().getIntExtra("marginLeft", 0), getIntent().getIntExtra("marginTop", 0), 0, 0);
+                    runMapAnimationDefault();
+                    break;
+                case "2":
+                    btnFloor = findViewById(R.id.main_btn_floor_2);
+                    btnFloorDong = findViewById(R.id.main_btn_ga_dong);
+                    mapImage.setImageResource(R.drawable.img_floor_2);
+                    intent.putExtra("Floor", "2");
+                    mapLayoutParams.setMargins(getIntent().getIntExtra("marginLeft", 0), getIntent().getIntExtra("marginTop", 0), 0, 0);
+                    runMapAnimationDefault();
+                    break;
+                case "3":
+                    btnFloor = findViewById(R.id.main_btn_floor_3);
+                    btnFloorDong = findViewById(R.id.main_btn_ga_dong);
+                    mapImage.setImageResource(R.drawable.img_floor_3);
+                    intent.putExtra("Floor", "3");
+                    mapLayoutParams.setMargins(getIntent().getIntExtra("marginLeft", 0), getIntent().getIntExtra("marginTop", 0), 0, 0);
+                    runMapAnimation3F();
+                    break;
+                case "4":
+                    btnFloor = findViewById(R.id.main_btn_floor_4);
+                    btnFloorDong = findViewById(R.id.main_btn_ga_dong);
+                    mapImage.setImageResource(R.drawable.img_floor_4);
+                    intent.putExtra("Floor", "4");
+                    mapLayoutParams.setMargins(getIntent().getIntExtra("marginLeft", 0), getIntent().getIntExtra("marginTop", 0), 0, 0);
+                    mHandler.postDelayed(new Runnable() {
+                        public void run() {
+                            runMapAnimation3F();
+                        }
+                    }, 700); // 0.5초후
+                    break;
+                case "5":
+                    btnFloor = findViewById(R.id.main_btn_floor_5);
+                    btnFloorDong = findViewById(R.id.main_btn_ga_dong);
+                    mapImage.setImageResource(R.drawable.img_floor_5);
+                    intent.putExtra("Floor", "5");
+                    mapLayoutParams.setMargins(getIntent().getIntExtra("marginLeft", 0), getIntent().getIntExtra("marginTop", 0), 0, 0);
+                    runMapAnimation3F();
+                    break;
+                case "6":
+                    btnFloor = findViewById(R.id.main_btn_floor_6);
+                    btnFloorDong = findViewById(R.id.main_btn_ga_dong);
+                    mapImage.setImageResource(R.drawable.img_floor_6);
+                    intent.putExtra("Floor", "6");
+                    mapLayoutParams.setMargins(getIntent().getIntExtra("marginLeft", 0), getIntent().getIntExtra("marginTop", 0), 0, 0);
+                    runMapAnimation3F();
+                    break;
 
-                }
             }
-
         }
 
-        btnFloor.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_main_floor_pressed));
+        if(btnFloor != null){
+            btnFloor.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_main_floor_pressed));
+        }
         btnFloorDong.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_main_floor_pressed));
+
         Button btnReturn = findViewById(R.id.detail_btn_return);
         btnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
