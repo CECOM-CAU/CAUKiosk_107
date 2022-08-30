@@ -22,6 +22,7 @@ public class TotalViewActivity extends BaseActivity {
         setContentView(R.layout.activity_total_view);
         initialView();
 
+        LinearLayout FEXTLayout = findViewById(R.id.total_view_ext);
         LinearLayout FB1Layout = findViewById(R.id.total_view_B1);
         LinearLayout FB2Layout = findViewById(R.id.total_view_B2);
         LinearLayout F1Layout = findViewById(R.id.total_view_1);
@@ -31,6 +32,7 @@ public class TotalViewActivity extends BaseActivity {
         LinearLayout F5Layout = findViewById(R.id.total_view_5);
         LinearLayout F6Layout = findViewById(R.id.total_view_6);
 
+        FEXTLayout.setOnClickListener(floorListener);
         FB1Layout.setOnClickListener(floorListener);
         FB2Layout.setOnClickListener(floorListener);
         F1Layout.setOnClickListener(floorListener);
@@ -63,8 +65,9 @@ public class TotalViewActivity extends BaseActivity {
                         }else{
                             FB2Layout.addView(tv);
                         }
+                    }else if(curFloor.startsWith("E")){
+                        FEXTLayout.addView(tv);
                     }else{
-
                         switch(Integer.parseInt(curFloor)) {
                             case 1:
                                 F1Layout.addView(tv);
@@ -101,6 +104,9 @@ public class TotalViewActivity extends BaseActivity {
         public void onClick(View view) {
             Intent intent = new Intent(getApplicationContext(), FloorActivity.class);
             switch(view.getId()){
+                case R.id.total_view_ext:
+                    intent.putExtra("Floor", "EXT");
+                    break;
                 case R.id.total_view_B2:
                     intent.putExtra("Floor", "B2");
                     break;
@@ -125,7 +131,6 @@ public class TotalViewActivity extends BaseActivity {
                 case R.id.total_view_6:
                     intent.putExtra("Floor", "6");
                     break;
-
             }
             startActivity(intent);
             finish();
