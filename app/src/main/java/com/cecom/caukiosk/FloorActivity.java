@@ -5,8 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -351,6 +354,14 @@ public class FloorActivity extends BaseActivity {
         }else if(floor.equals("ext")){
             btnFloor = null;
             btnFloorDong = findViewById(R.id.main_btn_etc_dong);
+
+            File imgFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "club_image" + File.separator, "ExternalClubMap.png");
+            if(imgFile.exists()){
+                Bitmap bm = BitmapFactory.decodeFile(imgFile.getPath());
+
+                ImageView floorMapView = findViewById(R.id.floor_map);
+                floorMapView.setImageBitmap(bm);
+            }
         }else{
             Log.d("floor_number",floor);
             switch(floor.substring(0, 1).toLowerCase()) {
