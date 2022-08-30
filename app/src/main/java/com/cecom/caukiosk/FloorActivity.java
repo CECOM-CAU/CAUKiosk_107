@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -241,8 +242,8 @@ public class FloorActivity extends BaseActivity {
 
         for(int i = 0; i < cateList.size(); i++){
             final CategoryTextView tempView = new CategoryTextView(getApplicationContext(), cateList.get(i).room, cateList.get(i).cate);
-            LinearLayout.LayoutParams tempViewParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT,1);
-            tempViewParams.setMargins(0,0,0,5);
+            LinearLayout.LayoutParams tempViewParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+            tempViewParams.setMargins(-165,0,0,0);
             tempView.setLayoutParams(tempViewParams);
             tempView.setOnClickListener(new View.OnClickListener() {
                 @Override
