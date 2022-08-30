@@ -65,7 +65,7 @@ public class TotalViewActivity extends BaseActivity {
                         }else{
                             FB2Layout.addView(tv);
                         }
-                    }else if(curFloor.startsWith("E")){
+                    }else if(curFloor.startsWith("e")){
                         FEXTLayout.addView(tv);
                     }else{
                         switch(Integer.parseInt(curFloor)) {
