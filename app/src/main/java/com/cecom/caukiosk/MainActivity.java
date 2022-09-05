@@ -47,10 +47,7 @@ public class MainActivity extends BaseActivity {
                 if(view.getId() == R.id.image_view_main_logo){
                     tapCnt++;
                 }
-                if(tapCnt > 10){
-                    Toast.makeText(getApplicationContext(),String.valueOf(tapCnt),Toast.LENGTH_SHORT).show();
-                }
-                if(tapCnt == 35){
+                if(tapCnt >= 15){
                     whiteView.setVisibility(View.VISIBLE);
                     EasterEggView.setVisibility(View.VISIBLE);
                     KioskModeApp.setIsInLockMode(!KioskModeApp.isInLockMode);
