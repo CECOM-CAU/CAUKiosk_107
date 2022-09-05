@@ -5,12 +5,17 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.io.File;
 
 public class MainActivity extends BaseActivity {
     int curBG = 4;
@@ -48,6 +53,12 @@ public class MainActivity extends BaseActivity {
                     tapCnt++;
                 }
                 if(tapCnt >= 15){
+                    File imgFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "club_image" + File.separator, "EasterEgg.png");
+                    if(imgFile.exists()){
+                        Bitmap bm = BitmapFactory.decodeFile(imgFile.getPath());
+                        EasterEggView.setImageBitmap(bm);
+                    }
+
                     whiteView.setVisibility(View.VISIBLE);
                     EasterEggView.setVisibility(View.VISIBLE);
                     KioskModeApp.setIsInLockMode(!KioskModeApp.isInLockMode);
